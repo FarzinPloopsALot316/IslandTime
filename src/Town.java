@@ -2,9 +2,9 @@ public class Town {
     private String name;
     private int villagerNumbers;
 
-    public Town (String name, int villagerNumbers) {
+    public Town (String name) {
         this.name = name;
-        this.villagerNumbers = villagerNumbers;
+        this.villagerNumbers = 5;
     }
 
     public String getName() {
