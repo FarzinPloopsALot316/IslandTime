@@ -1,7 +1,23 @@
 public class MayorVillager extends Villager {
+    private int friendship;
 
     public MayorVillager (String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
+        this.friendship = 50;
+    }
+
+    public void decreaseFriendship (int num) {
+        friendship -= num;
+        if (friendship < 0) {
+            friendship = 0;
+        }
+    }
+
+    public void increaseFriendship (int num) {
+        friendship += num;
+        if (friendship > 100) {
+            friendship = 100;
+        }
     }
 
     public void announcement(Time currentTime, Town village) {
