@@ -141,4 +141,5 @@ public class Game {
         myTime = new Time(currentMonth, currentDate, currentTime, currentDay, currentWeather);
         System.out.println("Great! let's get started now, shall we?");
     }
+
 }
