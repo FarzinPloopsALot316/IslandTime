@@ -68,7 +68,7 @@ public class Game {
         System.out.println("Please enter your birth month.");
         String playerMonth = scan.nextLine();
         System.out.println();
-        System.out.println("(NUMBER ONLY!!) Enter only the number of your birthday.");
+        System.out.println("(NUMBER ONLY!!) Enter only the numerical date of your birthday.");
         int playerDate = scan.nextInt();
         waitASecond();
         System.out.println();
@@ -131,7 +131,7 @@ public class Game {
         String currentDay = scan.nextLine();
         System.out.println("Enter the current month.");
         String currentMonth = scan.nextLine();
-        System.out.println("Now enter the numerical date. Just the date number (eg. 17)");
+        System.out.println("(NUMBER ONLY!!) Now enter the numerical date. Just the date number (eg. 17)");
         int currentDate = scan.nextInt();
         System.out.println("Is it morning, evening, or night?");
         String currentTime = scan.nextLine();
