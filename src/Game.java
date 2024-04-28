@@ -134,6 +134,7 @@ public class Game {
         System.out.println("(NUMBER ONLY!!) Now enter the numerical date. Just the date number (eg. 17)");
         int currentDate = scan.nextInt();
         System.out.println("Is it morning, evening, or night?");
+        scan.nextLine();
         String currentTime = scan.nextLine();
         System.out.println("Hah haa, almost there! Finally, whats the weather? Sunny, rainy, or snowy?");
         String currentWeather = scan.nextLine();
