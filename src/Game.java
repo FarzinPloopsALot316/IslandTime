@@ -129,8 +129,15 @@ public class Game {
         }
         System.out.println("Cool! Enter the current weekday.");
         String currentDay = scan.nextLine();
-        System.out.println("Current month?");
+        System.out.println("Enter the current month.");
         String currentMonth = scan.nextLine();
-        System.out.println("Current year?");
+        System.out.println("Now enter the numerical date. Just the date number (eg. 17)");
+        int currentDate = scan.nextInt();
+        System.out.println("Is it morning, evening, or night?");
+        String currentTime = scan.nextLine();
+        System.out.println("Hah haa, almost there! Finally, whats the weather? Sunny, rainy, or snowy?");
+        String currentWeather = scan.nextLine();
+        myTime = new Time(currentMonth, currentDate, currentTime, currentDay, currentWeather);
+        System.out.println("Great! let's get started now, shall we?");
     }
 }

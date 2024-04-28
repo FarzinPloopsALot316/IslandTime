@@ -52,7 +52,7 @@ public class MayorVillager extends Villager {
         if (greeting == 10) {
             System.out.println("I hate you all, and I couldn't give less of a shit about your lives, but here I am.");
         }
-        System.out.println("Today is " + currentTime.getMonth() + " " + currentTime.getDay() + ", " + currentTime.getYear() + "!");
+        System.out.println("Today is " + currentTime.getMonth() + " " + currentTime.getDay() + "!");
         if (currentTime.getWeather().equals("rainy")) {
             System.out.println("It sure is a rainy " + currentTime.getWeekday() + "!");
             System.out.println("Be sure to bring an umbrella outside! We don't want our friends to catch a cold now, do we? " + getCatchphrase() + "!");
