@@ -140,6 +140,23 @@ public class Game {
         String currentWeather = scan.nextLine();
         myTime = new Time(currentMonth, currentDate, currentTime, currentDay, currentWeather);
         System.out.println("Great! let's get started now, shall we?");
+        waitASecond();
+        System.out.println();
+        System.out.println("I'll meet you at the island. My assistant will be glad to fly you there himself.");
+        System.out.println("See you later, " + player.getName() + "! " + MrMiller.getCatchphrase() + "!");
+        day1();
     }
 
+    public void day1 () {
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.CYAN + """
+        The waves below sparkled as you flew over the crystal clear waters.
+        The island came into view, just above on the horizon.
+        "Landing will begin in 5 minutes," said the pilot through the intercom.
+        """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.CYAN + "After a while, you step out onto the sandy shores of " + myTown.getName() + ", admiring the scenery.");
+        System.out.println("");
+    }
 }

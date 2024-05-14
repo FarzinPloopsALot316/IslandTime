@@ -22,4 +22,24 @@ public class Player {
         locationSetting = false;
         System.out.println("Your location has been turned OFF.");
     }
+
+    public String getName () {
+        return name;
+    }
+
+    public int getBirthDate() {
+        return birthDate;
+    }
+
+    public String getBirthMonth() {
+        return birthMonth;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public boolean isLocationSetting() {
+        return locationSetting;
+    }
 }
