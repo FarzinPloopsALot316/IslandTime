@@ -18,7 +18,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     public GraphicsPanel () {
         Micheal = new MayorVillager("hah haa", 42, "May", 15);
         try {
-            background = ImageIO.read(new File("src/uhm.png"));
+            background = ImageIO.read(new File("src/reception.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -33,9 +33,11 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     }
 
     public void paintComponent (Graphics g) {
-        g.drawImage(mayorImg, 200, 0, null);
-        g.fillRect(0, 200, 200, 300);
-        g.drawString("Hello hello? Is this the newcomer speaking?", 100, 300);
+        g.drawImage(background, 0, 0, null);
+        g.drawImage(mayorImg, 400, 300, null);
+        g.fillRect(0, 400, 900, 200);
+        g.setColor(Color.white);
+        g.drawString("Hello hello? Is this the newcomer speaking?", 100, 500);
     }
 
     public void keyTyped(KeyEvent e) {
