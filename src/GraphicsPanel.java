@@ -10,10 +10,11 @@ import java.util.ArrayList;
 public class GraphicsPanel extends JPanel implements KeyListener, MouseListener, ActionListener {
     private MayorVillager Micheal;
     private Player player;
+    private JButton button;
+    private JFrame frame;
     private BufferedImage mayorImg;
     private JTextField textField;
     private BufferedImage background;
-    private boolean[] pressedKeys;
     private String dialogue;
 
     public GraphicsPanel () {
@@ -29,10 +30,12 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        button = new JButton("-->");
+        add(button);
+        button.addActionListener(this);
         addKeyListener(this);
         addMouseListener(this);
         textField =  new JTextField(15);
-        pressedKeys = new boolean[128];
         dialogue = "Hello hello? Is this the newcomer speaking?";
     }
 
@@ -42,6 +45,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.fillRect(0, 400, 900, 200);
         g.setColor(Color.white);
         g.drawString(dialogue, 100, 500);
+        button.setLocation(820, 450);
     }
 
     public void keyTyped(KeyEvent e) {
@@ -49,13 +53,9 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     }
 
     public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-        pressedKeys[key] = true;
     }
 
     public void keyReleased(KeyEvent e) {
-        int key = e.getKeyCode();
-        pressedKeys[key] = true;
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -79,6 +79,8 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     }
 
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() instanceof JButton) {
+            System.out.println("button worked");
+        }
     }
 }
