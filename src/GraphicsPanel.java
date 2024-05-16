@@ -80,7 +80,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            System.out.println("button worked");
+            dialogue = "Ah yes! Welcome! It is a pleasure to have you here!";
         }
     }
 }
