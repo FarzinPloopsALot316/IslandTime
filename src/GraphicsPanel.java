@@ -40,6 +40,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         textField =  new JTextField(15);
         add(textField);
         textField.addActionListener(this);
+        textField.setVisible(false);
         dialogue = Micheal.getDialogue(introIdx);
     }
 
@@ -51,7 +52,11 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.drawString(dialogue, 100, 500);
         button.setLocation(820, 450);
         if (introIdx == 7) {
+            textField.setVisible(true);
             textField.setLocation(450, 300);
+        }
+        if (introIdx == 8) {
+            textField.setVisible(false);
         }
     }
 
