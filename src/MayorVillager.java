@@ -1,9 +1,22 @@
+import java.util.ArrayList;
+
 public class MayorVillager extends Villager {
     private int friendship;
+    private ArrayList<String> intro;
 
     public MayorVillager (String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
         this.friendship = 50;
+
+        //intro list;
+        intro = new ArrayList<>();
+        intro.add("Hello hello? Is this the newcomer speaking?");
+        intro.add("Ah yes! Welcome! It is a pleasure to have you here.");
+        intro.add("Thank you for purchasing the Tropical Vacation package.");
+        intro.add("I am Micheal, your guide to a happy, peaceful, and tranquil start in a new community.");
+        intro.add("...");
+        intro.add("You don't... talk much do you?");
+        intro.add("That's okay... you can trust me you know.");
     }
 
     public void decreaseFriendship (int num) {
@@ -18,6 +31,10 @@ public class MayorVillager extends Villager {
         if (friendship > 100) {
             friendship = 100;
         }
+    }
+
+    public String getDialogue(int idx) {
+        return intro.get(idx);
     }
 
     public void announcement(Time currentTime, Town village) {

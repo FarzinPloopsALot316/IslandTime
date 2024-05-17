@@ -16,8 +16,10 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private JTextField textField;
     private BufferedImage background;
     private String dialogue;
+    private int introIdx;
 
     public GraphicsPanel () {
+        introIdx = 0;
         Micheal = new MayorVillager("hah haa", 24, "August", 15);
         try {
             background = ImageIO.read(new File("src/reception.png"));
@@ -30,13 +32,13 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        button = new JButton("-->");
+        button = new JButton("⟹");
         add(button);
         button.addActionListener(this);
         addKeyListener(this);
         addMouseListener(this);
         textField =  new JTextField(15);
-        dialogue = "Hello hello? Is this the newcomer speaking?";
+        dialogue = Micheal.getDialogue(introIdx);
     }
 
     public void paintComponent (Graphics g) {
@@ -80,7 +82,10 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            dialogue = "Ah yes! Welcome! It is a pleasure to have you here!";
+            requestFocusInWindow();
+            introIdx++;
+            dialogue = Micheal.getDialogue(introIdx);
+            repaint();
         }
     }
 }
