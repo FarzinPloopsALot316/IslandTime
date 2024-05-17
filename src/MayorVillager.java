@@ -17,6 +17,10 @@ public class MayorVillager extends Villager {
         intro.add("...");
         intro.add("You don't... talk much do you?");
         intro.add("That's okay... you can trust me you know.");
+        intro.add("Hm. How about you tell me your name? I'll have to start off somewhere, hah haa!");
+        intro.add("What a lovely name!");
+        intro.add("I need to ask you a few more things... if you don't mind.");
+        intro.add("I have to make your experience as a player more... lively, must I not? Hah haa!");
     }
 
     public void decreaseFriendship (int num) {

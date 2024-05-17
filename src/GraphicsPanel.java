@@ -38,6 +38,8 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         addKeyListener(this);
         addMouseListener(this);
         textField =  new JTextField(15);
+        add(textField);
+        textField.addActionListener(this);
         dialogue = Micheal.getDialogue(introIdx);
     }
 
@@ -48,6 +50,9 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.setColor(Color.white);
         g.drawString(dialogue, 100, 500);
         button.setLocation(820, 450);
+        if (introIdx == 7) {
+            textField.setLocation(450, 300);
+        }
     }
 
     public void keyTyped(KeyEvent e) {
@@ -81,7 +86,13 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() instanceof JButton) {
+        if (e.getSource() instanceof JButton && introIdx == 7) {
+            String name = textField.getText();
+            System.out.println(name);
+            introIdx++;
+            dialogue = name + ". " + Micheal.getDialogue(introIdx);
+            repaint();
+        } else if (e.getSource() instanceof JButton) {
             requestFocusInWindow();
             introIdx++;
             dialogue = Micheal.getDialogue(introIdx);

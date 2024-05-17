@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="window based">
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="made the dialogue work for the love of god">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715862214179</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="made the dialogue work for the love of god">
+      <created>1715951372664</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715951372664</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,6 +162,7 @@
     <MESSAGE value="it works somehow" />
     <MESSAGE value="giggles and dies" />
     <MESSAGE value="window based" />
-    <option name="LAST_COMMIT_MESSAGE" value="window based" />
+    <MESSAGE value="made the dialogue work for the love of god" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the dialogue work for the love of god" />
   </component>
 </project>
