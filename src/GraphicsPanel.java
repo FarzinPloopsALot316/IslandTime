@@ -55,9 +55,6 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
             textField.setVisible(true);
             textField.setLocation(450, 300);
         }
-        if (introIdx == 8) {
-            textField.setVisible(false);
-        }
     }
 
     public void keyTyped(KeyEvent e) {
@@ -96,6 +93,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
             System.out.println(name);
             introIdx++;
             dialogue = name + ". " + Micheal.getDialogue(introIdx);
+            textField.setVisible(false);
             repaint();
         } else if (e.getSource() instanceof JButton) {
             requestFocusInWindow();
