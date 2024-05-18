@@ -17,10 +17,31 @@ public class MayorVillager extends Villager {
         intro.add("...");
         intro.add("You don't... talk much do you?");
         intro.add("That's okay... you can trust me you know.");
-        intro.add("Hm. How about you tell me your name? I'll have to start off somewhere, hah haa!");
+        intro.add("Hm. How about you tell me your name? I'll have to start off somewhere, hah haa!"); //7
         intro.add("What a lovely name!");
         intro.add("I need to ask you a few more things... if you don't mind.");
         intro.add("I have to make your experience as a player more... lively, must I not? Hah haa!");
+        intro.add("For the town we're going to decide on... it'll need a name, won't it now?");
+        intro.add("Why don't you do the honors and come up with a lovely name for our little vacation town? Hah haa!"); //12
+        intro.add("Lovely! Our town's name is now ");
+        intro.add("I could never pick a better name! Hah haa!");
+        intro.add("Oh! I almost forgot.");
+        intro.add("How can I forget to for my client's beloved birthday!");
+        intro.add("Why don't you tell me your birth month and year?");
+        intro.add("I'll need it for documentation. Hah haa! Or whatnot."); //18
+
+        intro.add("Oh wonderful! You're amazing, you know that? Hah haa.");//19
+        intro.add("Enter your birthmonth. (e.g: May)"); //20
+        intro.add("Enter your date. (Numbers only! e.g: 17)"); //21
+
+        intro.add("W-what?... why not?"); //22
+        intro.add("I... okay. That's fine."); //23
+        intro.add("Well, now that all that's done, let's move on shall we?"); //24
+        intro.add("Don't want to delay you on you vacation!");
+    }
+
+    public int getMichealIntroLength() {
+        return intro.size();
     }
 
     public void decreaseFriendship (int num) {
