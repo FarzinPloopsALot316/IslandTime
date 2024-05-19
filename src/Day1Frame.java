@@ -4,15 +4,15 @@ public class Day1Frame {
 
     public Day1Frame() {
 
-        JFrame frame = new JFrame("Island Time Day 1");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(900, 600); // 540 height of image + 40 for window menu bar
-        frame.setLocationRelativeTo(null); // auto-centers frame in screen
+        JFrame frame1 = new JFrame("Island Time Day 1");
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame1.setSize(900, 600); // 540 height of image + 40 for window menu bar
+        frame1.setLocationRelativeTo(null); // auto-centers frame in screen
 
-        panel = new Day1Panel(frame);
-        frame.add(panel);
+        panel = new Day1Panel(frame1);
+        frame1.add(panel);
 
-        frame.setVisible(true);
+        frame1.setVisible(true);
     }
 
     public void run() {
