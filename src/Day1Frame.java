@@ -2,7 +2,7 @@ import javax.swing.*;
 public class Day1Frame {
     private Day1Panel panel;
 
-    public Day1Frame () {
+    public Day1Frame() {
 
         JFrame frame = new JFrame("Island Time Day 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
