@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class MayorVillager extends Villager {
     private int friendship;
+
     private ArrayList<String> intro;
+    private ArrayList<String> day1;
 
     public MayorVillager (String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
