@@ -1,21 +1,21 @@
 import javax.swing.*;
-public class MainFrame {
-    private GraphicsPanel panel;
+public class Day1Frame {
+    private Day1Panel panel1;
 
-    public MainFrame() {
+    public Day1Frame () {
 
-        JFrame frame = new JFrame("Island Time");
+        JFrame frame = new JFrame("Island Time Day 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(900, 600); // 540 height of image + 40 for window menu bar
         frame.setLocationRelativeTo(null); // auto-centers frame in screen
 
-        panel = new GraphicsPanel(frame);
-        frame.add(panel);
+        panel1 = new Day1Panel(frame);
+        frame.add(panel1);
 
         frame.setVisible(true);
     }
 
     public void run() {
-        panel.repaint();
+        panel1.repaint();
     }
 }

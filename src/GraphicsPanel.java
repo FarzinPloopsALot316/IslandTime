@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class GraphicsPanel extends JPanel implements KeyListener, MouseListener, ActionListener {
-    private MayorVillager Micheal;
+    private static MayorVillager Micheal;
     private String name;
     private String month;
     private int date;
-    private Player player;
-    private Time time;
-    private Town town;
+    private static Player player;
+    private static Time time;
+    private static Town town;
     private boolean accepted;
 
     private JFrame enclosingFrame;
@@ -116,6 +116,22 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.drawString(dialogue, 100, 500);
     }
 
+    public MayorVillager getMicheal () {
+        return Micheal;
+    }
+
+    public Player getPlayer () {
+        return player;
+    }
+
+    public Time getTime () {
+        return time;
+    }
+
+    public Town getTown () {
+        return town;
+    }
+
     public void keyTyped(KeyEvent e) {
 
     }
@@ -202,6 +218,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
             }
         } else {
             enclosingFrame.setVisible(false);
+            new Day1Frame();
         }
     }
 }
