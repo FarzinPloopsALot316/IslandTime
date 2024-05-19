@@ -8,7 +8,7 @@ public class MainFrame {
         frame.setSize(900, 600); // 540 height of image + 40 for window menu bar
         frame.setLocationRelativeTo(null); // auto-centers frame in screen
 
-        panel = new GraphicsPanel();
+        panel = new GraphicsPanel(frame);
         frame.add(panel);
 
         frame.setVisible(true);

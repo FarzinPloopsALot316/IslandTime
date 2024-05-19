@@ -17,16 +17,19 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private Town town;
     private boolean accepted;
 
+    private JFrame enclosingFrame;
     private JButton button;
     private JButton accept;
     private JButton decline;
     private BufferedImage mayorImg;
+    private BufferedImage crazyImg;
     private JTextField textField;
     private BufferedImage background;
     private String dialogue;
     private int introIdx;
 
-    public GraphicsPanel () {
+    public GraphicsPanel (JFrame frame) {
+        enclosingFrame = frame;
         introIdx = 0;
         name = "Player";
         Micheal = new MayorVillager("hah haa", 24, "August", 15);
@@ -37,7 +40,12 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         }
 
         try {
-            mayorImg = ImageIO.read(new File("src/uhm.png"));
+            mayorImg = ImageIO.read(new File("src/MichealStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            crazyImg = ImageIO.read(new File("src/MichealCrazy.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -64,7 +72,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         accept.setLocation(-350, 300);
         decline.setLocation(-400, 300);
         g.drawImage(background, 0, 0, null);
-        g.drawImage(mayorImg, 400, 300, null);
+        g.drawImage(mayorImg, 375, 275, null);
         g.fillRect(0, 400, 900, 200);
         g.setColor(Color.white);
         button.setLocation(820, 450);
@@ -100,6 +108,9 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
             decline.setLocation(-400, 300);
             Micheal.decreaseFriendship(5);
             player = new Player(name, "N/A", 0);
+            g.drawImage(crazyImg, 375, 275, null);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
             g.setColor(Color.RED);
         }
         g.drawString(dialogue, 100, 500);
@@ -190,7 +201,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
                 repaint();
             }
         } else {
-            System.out.println("You're clicking past the index bounds! Stop it!");
+            enclosingFrame.setVisible(false);
         }
     }
 }

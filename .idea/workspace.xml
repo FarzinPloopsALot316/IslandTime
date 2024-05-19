@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="made the dialogue work for the love of god">
+      <change afterPath="$PROJECT_DIR$/src/MichealCrazy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MichealLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MichealRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MichealStand.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleUtility.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MayorVillager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Time.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Town.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Villager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uhm.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +70,8 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -179,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715952474789</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="made the dialogue work for the love of god">
+      <option name="closed" value="true" />
+      <created>1716075444492</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716075444492</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
