@@ -116,22 +116,6 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.drawString(dialogue, 100, 500);
     }
 
-    public MayorVillager getMicheal () {
-        return Micheal;
-    }
-
-    public Player getPlayer () {
-        return player;
-    }
-
-    public Time getTime () {
-        return time;
-    }
-
-    public Town getTown () {
-        return town;
-    }
-
     public void keyTyped(KeyEvent e) {
 
     }

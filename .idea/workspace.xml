@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="made the dialogue work for the love of god">
-      <change afterPath="$PROJECT_DIR$/src/MichealCrazy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MichealLeft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MichealRight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MichealStand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleUtility.java" beforeDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="intro done">
+      <change afterPath="$PROJECT_DIR$/src/Day1Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uhm.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716075444492</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="intro done">
+      <option name="closed" value="true" />
+      <created>1716147036787</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716147036787</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -191,6 +194,7 @@
     <MESSAGE value="giggles and dies" />
     <MESSAGE value="window based" />
     <MESSAGE value="made the dialogue work for the love of god" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the dialogue work for the love of god" />
+    <MESSAGE value="intro done" />
+    <option name="LAST_COMMIT_MESSAGE" value="intro done" />
   </component>
 </project>
