@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="Added Player Images (I DREW THEM ALL BY MY GOD DANG SELF)">
+      <change afterPath="$PROJECT_DIR$/src/MayorHome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/islandBeach.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +67,8 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

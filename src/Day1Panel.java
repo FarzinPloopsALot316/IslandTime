@@ -8,15 +8,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Day1Panel extends JPanel implements ActionListener, Runnable {
+    private MayorVillager mayor;
+    private Player player;
     private String dialogue;
     private Pilot pilot;
     private int planeIdx;
+    private int mayorDay1Idx;
+    private double mayorX;
+    private double mayorY;
+
+    private BufferedImage grass;
 
     private BufferedImage mayorImg;
     private BufferedImage crazyImg;
     private BufferedImage mayorRight;
     private BufferedImage mayorLeft;
+    private BufferedImage playerStand;
+    private BufferedImage playerLeft;
+    private BufferedImage playerRight;
     private BufferedImage planeBackground;
+    private BufferedImage beach;
+    private BufferedImage mayorHouse;
     private JButton button;
     private JButton okaySorry;
     private JButton ughFine;
@@ -24,8 +36,13 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private JFrame enclosingFrame;
 
     public Day1Panel (JFrame frame) {
+        mayorX = 0;
+        mayorY = 0;
         pilot = new Pilot();
         planeIdx = 0;
+        mayorDay1Idx = -1;
+        mayor = GraphicsPanel.getMicheal();
+        player = GraphicsPanel.getPlayer();
 
         enclosingFrame = frame;
         try {
@@ -57,6 +74,43 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        try {
+            beach = ImageIO.read(new File("src/islandBeach.jpg"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            playerStand = ImageIO.read(new File("src/PlayerStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            playerLeft = ImageIO.read(new File("src/PlayerLeft.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            playerRight = ImageIO.read(new File("src/PlayerRight.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            grass = ImageIO.read(new File("src/grass.jpg"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            mayorHouse = ImageIO.read(new File("MayorHome.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
         button = new JButton("⟹");
         add(button);
         button.addActionListener(this);
@@ -73,60 +127,86 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     }
 
     public void paintComponent (Graphics g) {
-        whatWolves.setLocation(-400, -400);
-        okaySorry.setLocation(-400, -400);
-        ughFine.setLocation(-400, -400);
-        g.fillRect(0, 0, 900, 600);
-        g.drawImage(planeBackground,46, 0, null);
-        g.fillRect(0, 400, 900, 200);
-        button.setLocation(820, 450);
-        g.setColor(Color.WHITE);
-        if (planeIdx < 3) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 4) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 6) {
-            button.setLocation(-400, -400);
-            okaySorry.setLocation(775, 470);
-            ughFine.setLocation(775, 430);
-        }
-        if (planeIdx > 6) {
-            button.setLocation(820, 450);
-            okaySorry.setLocation(-440, -440);
-            ughFine.setLocation(-440, -440);
-        }
-        if (planeIdx == 9) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 10) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx > 10 && planeIdx < 18) {
-            g.setColor(Color.YELLOW);
-        }
-        if (planeIdx == 18) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 19) {
-            button.setLocation(-400, -400);
-            whatWolves.setLocation(775, 450);
-        }
-        if (planeIdx == 20) {
-            button.setLocation(820, 450);
+        if (planeIdx < 29) {
             whatWolves.setLocation(-400, -400);
+            okaySorry.setLocation(-400, -400);
+            ughFine.setLocation(-400, -400);
+            g.fillRect(0, 0, 900, 600);
+            g.drawImage(planeBackground,46, 0, null);
+            g.fillRect(0, 400, 900, 200);
+            button.setLocation(820, 450);
+            g.setColor(Color.WHITE);
+            if (planeIdx < 3) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 4) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 6) {
+                button.setLocation(-400, -400);
+                okaySorry.setLocation(775, 470);
+                ughFine.setLocation(775, 430);
+            }
+            if (planeIdx > 6) {
+                button.setLocation(820, 450);
+                okaySorry.setLocation(-440, -440);
+                ughFine.setLocation(-440, -440);
+            }
+            if (planeIdx == 9) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 10) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx > 10 && planeIdx < 18) {
+                g.setColor(Color.YELLOW);
+            }
+            if (planeIdx == 18) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 19) {
+                button.setLocation(-400, -400);
+                whatWolves.setLocation(750, 450);
+            }
+            if (planeIdx == 20) {
+                button.setLocation(820, 450);
+                whatWolves.setLocation(-400, -400);
+            }
+            if (planeIdx == 24) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 25) {
+                g.setColor(Color.PINK);
+            }
+            if (planeIdx == 28) {
+                g.setColor(Color.PINK);
+            }
+            g.drawString(dialogue, 100, 500);
+        } else {
+            g.fillRect(0, 0, 900, 600);
+            g.drawImage(beach,25, 0, null);
+            g.fillRect(0, 400, 900, 200);
+            button.setLocation(820, 450);
+            g.setColor(Color.WHITE);
+            if (mayorDay1Idx == 0) {
+                g.drawImage(playerRight, 500, 200, null);
+                g.drawImage(mayorRight, 0, 200, null);
+            } else {
+                g.drawImage(mayorImg, 300, 200, null);
+                g.drawImage(playerStand, 500, 200, null);
+                if (mayorDay1Idx > 2 && mayorDay1Idx < 6) {
+                    g.drawImage(grass, 0, 0, null);
+                    g.setColor(Color.BLACK);
+                    g.fillRect(0, 400, 900, 200);
+                    button.setLocation(820, 450);
+                    g.setColor(Color.GREEN);
+                    if (mayorDay1Idx == 5) {
+                        g.drawImage(mayorHouse, 100, 300, null);
+                    }
+                }
+            }
+            g.drawString(dialogue, 100, 500);
         }
-        if (planeIdx == 24) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 25) {
-            g.setColor(Color.PINK);
-        }
-        if (planeIdx == 28) {
-            g.setColor(Color.PINK);
-        }
-        g.drawString(dialogue, 100, 500);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -153,7 +233,13 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                 repaint();
             }
         } else {
-            System.out.println("You're passing the index bounds! Stop it!"); //test holder for now
+            planeIdx++;
+            if (e.getSource() instanceof JButton) {
+                requestFocusInWindow();
+                mayorDay1Idx++;
+                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                repaint();
+            }
         }
     }
 

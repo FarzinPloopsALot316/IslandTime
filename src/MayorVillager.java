@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class MayorVillager extends Villager {
     private int friendship;
     private ArrayList<String> intro;
+    private ArrayList<String> day1;
 
     public MayorVillager (String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
@@ -10,6 +11,7 @@ public class MayorVillager extends Villager {
 
         //intro list;
         intro = new ArrayList<>();
+        day1 = new ArrayList<>();
         intro.add("Hello hello? Is this the newcomer speaking?");
         intro.add("Ah yes! Welcome! It is a pleasure to have you here.");
         intro.add("Thank you for purchasing the Tropical Vacation package.");
@@ -31,13 +33,23 @@ public class MayorVillager extends Villager {
         intro.add("I'll need it for documentation. Hah haa! Or whatnot."); //18
 
         intro.add("Oh wonderful! You're amazing, you know that? Hah haa.");//19
-        intro.add("Enter your birthmonth. (e.g: May)"); //20
+        intro.add("Enter your birth month. (e.g: May)"); //20
         intro.add("Enter your date. (Numbers only! e.g: 17)"); //21
 
         intro.add("W-what?... why not?"); //22
         intro.add("I... okay. That's fine."); //23
         intro.add("Well, now that all that's done, let's move on shall we?"); //24
         intro.add("Don't want to delay you on you vacation!");
+
+        day1.add("Ah! There you are!");
+        day1.add("I just couldn't wait for you to arrive! I was so excited! Hah haa!");
+        day1.add("Why don't we get to business, hm? Gotta show you around the island!");
+        day1.add("This is the grassy spot I've cleared for me, you, and all the friends we're gonna have!"); //3
+        day1.add("I'll be placing my quarters along the top left. Your house will be nearby mine, hah haa."); //4
+        day1.add("My house will probably look like this! I picked the design myself!"); //5
+        day1.add("Which design would you like for your very own vacation home?");
+        day1.add("Sounds great! I can have both our houses done by tonight, hah haa!");
+
     }
 
     public int getMichealIntroLength() {
@@ -60,6 +72,10 @@ public class MayorVillager extends Villager {
 
     public String getDialogue(int idx) {
         return intro.get(idx);
+    }
+
+    public String getDay1Dialogue (int idx) {
+        return day1.get(idx);
     }
 
     public void announcement(Time currentTime, Town village) {
