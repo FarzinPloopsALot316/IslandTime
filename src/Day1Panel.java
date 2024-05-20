@@ -106,7 +106,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         }
 
         try {
-            mayorHouse = ImageIO.read(new File("MayorHome.png"));
+            mayorHouse = ImageIO.read(new File("src/MayorHome.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -201,7 +201,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                     button.setLocation(820, 450);
                     g.setColor(Color.GREEN);
                     if (mayorDay1Idx == 5) {
-                        g.drawImage(mayorHouse, 100, 300, null);
+                        g.drawImage(mayorHouse, 100, 0, null);
                     }
                 }
             }

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="Added Player Images (I DREW THEM ALL BY MY GOD DANG SELF)">
-      <change afterPath="$PROJECT_DIR$/src/MayorHome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grass.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/islandBeach.jpg" afterDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="started day1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MayorHome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorHome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716166687325</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="started day1">
+      <created>1716211149739</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716211149740</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +275,7 @@
     <MESSAGE value="made the dialogue work for the love of god" />
     <MESSAGE value="intro done" />
     <MESSAGE value="Added Player Images (I DREW THEM ALL BY MY GOD DANG SELF)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Player Images (I DREW THEM ALL BY MY GOD DANG SELF)" />
+    <MESSAGE value="started day1" />
+    <option name="LAST_COMMIT_MESSAGE" value="started day1" />
   </component>
 </project>

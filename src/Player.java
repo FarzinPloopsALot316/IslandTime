@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Player {
+    private String playerHouse;
     private String name;
     private String birthMonth;
     private int birthDate;
@@ -19,12 +20,17 @@ public class Player {
         this.birthDate = birthDate;
         xCoord = 300;
         yCoord = 300;
+        playerHouse = "src/MayorHome.png";
     }
 
     public void moveRight() {
         if (xCoord + MOVE_AMT <= 900) {
             xCoord += MOVE_AMT;
         }
+    }
+
+    public void setPlayerHouse (String string) {
+        playerHouse = string;
     }
 
     public void moveLeft() {
