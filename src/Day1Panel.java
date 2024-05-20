@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Day1Panel extends JPanel implements ActionListener {
+public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private String dialogue;
     private Pilot pilot;
     private int planeIdx;
@@ -155,5 +155,9 @@ public class Day1Panel extends JPanel implements ActionListener {
         } else {
             System.out.println("You're passing the index bounds! Stop it!"); //test holder for now
         }
+    }
+
+    public void run() {
+        
     }
 }
