@@ -2,9 +2,7 @@ import java.util.ArrayList;
 
 public class MayorVillager extends Villager {
     private int friendship;
-
     private ArrayList<String> intro;
-    private ArrayList<String> day1;
 
     public MayorVillager (String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
@@ -28,7 +26,7 @@ public class MayorVillager extends Villager {
         intro.add("Lovely! Our town's name is now ");
         intro.add("I could never pick a better name! Hah haa!");
         intro.add("Oh! I almost forgot.");
-        intro.add("How can I forget to for my client's beloved birthday!");
+        intro.add("How can I forget to ask about my client's beloved birthday!");
         intro.add("Why don't you tell me your birth month and year?");
         intro.add("I'll need it for documentation. Hah haa! Or whatnot."); //18
 
