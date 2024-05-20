@@ -34,7 +34,7 @@ public class Pilot {
         planeDialogue.add("Only the muffled sounds of the engine can be heard."); // pink 25
         planeDialogue.add("\"Hey missy? Keep an eye on Micheal for me, would you?\"");
         planeDialogue.add("\"He's just acting weird lately. Been mad a whole lot of times more than I remember.\"");
-        planeDialogue.add("After a while of a long, pondering silence between the two, the jet lands."); //27
+        planeDialogue.add("After a while of a long, pondering silence between the two, the jet lands."); //28
     }
 
     public int getPlaneDialogueLength() {

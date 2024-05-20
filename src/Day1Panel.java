@@ -123,7 +123,7 @@ public class Day1Panel extends JPanel implements ActionListener {
         if (planeIdx == 25) {
             g.setColor(Color.PINK);
         }
-        if (planeIdx == 27) {
+        if (planeIdx == 28) {
             g.setColor(Color.PINK);
         }
         g.drawString(dialogue, 100, 500);
