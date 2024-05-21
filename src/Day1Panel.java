@@ -377,7 +377,5 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         }
     }
 
-    public void run() {
-        
-    }
+    public void run() {}
 }
