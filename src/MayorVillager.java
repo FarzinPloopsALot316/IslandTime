@@ -4,6 +4,7 @@ public class MayorVillager extends Villager {
     private int friendship;
     private ArrayList<String> intro;
     private ArrayList<String> day1;
+    private ArrayList<String> night1;
 
     public MayorVillager(String catchphrase, int age, String birthMonth, int birthDate) {
         super(catchphrase, age, birthMonth, birthDate);
@@ -12,6 +13,7 @@ public class MayorVillager extends Villager {
         //intro list;
         intro = new ArrayList<>();
         day1 = new ArrayList<>();
+        night1 = new ArrayList<>();
         intro.add("Hello hello? Is this the newcomer speaking?");
         intro.add("Ah yes! Welcome! It is a pleasure to have you here.");
         intro.add("Thank you for purchasing the Tropical Vacation package.");
@@ -50,12 +52,19 @@ public class MayorVillager extends Villager {
         day1.add("Which design would you like for your very own vacation home?"); //6
         day1.add("Sounds great! I can have both our houses done by tonight, hah haa!");
         day1.add("That's just a cliff."); //8
-        day1.add("While we're here, lets go set up a campfire before the sun sets.");
-        day1.add("Help me find some wood while I get some tents ready.");
+        day1.add("Hah haa! While we're here, lets go set up a campfire before the sun sets.");
+        day1.add("Help me find some wood while I get some tents ready."); //10
+
+        night1.add("Great job! You found all the wood, hah haa!");
+        night1.add("Now we can set up our lovely little campfire, just you and I.");
     }
 
     public int getMichealIntroLength() {
         return intro.size();
+    }
+
+    public int getMichealDay1Length() {
+        return day1.size();
     }
 
     public void decreaseFriendship(int num) {

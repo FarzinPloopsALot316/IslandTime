@@ -34,6 +34,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private BufferedImage mayorHouse;
     private BufferedImage emoHouse;
     private BufferedImage preppyHouse;
+    private BufferedImage cliff;
     private JButton button;
     private JButton okaySorry;
     private JButton ughFine;
@@ -128,6 +129,12 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
 
         try {
             preppyHouse = ImageIO.read(new File("src/preppy.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            cliff = ImageIO.read(new File("src/CliffSide.jpg"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -268,7 +275,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             g.drawString(dialogue, 100, 500);
         } else {
             g.fillRect(0, 0, 900, 600);
-            g.drawImage(beach,25, 0, null);
+            g.drawImage(beach,35, 0, null);
             g.fillRect(0, 400, 900, 200);
             button.setLocation(820, 450);
             g.setColor(Color.WHITE);
@@ -302,7 +309,18 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                     button.setLocation(820, 450);
                 }
                 if (mayorDay1Idx == 8) {
-
+                    g.drawImage(cliff, 0,0, null);
+                    g.setColor(Color.BLACK);
+                    g.fillRect(0, 400, 900, 200);
+                    g.setColor(Color.RED);
+                    ambience.stop();
+                    ambience.close();
+                    playRadio();
+                }
+                if (mayorDay1Idx == 9) {
+                    ambience.stop();
+                    ambience.close();
+                    playIntro();
                 }
             }
             g.drawString(dialogue, 100, 500);
@@ -332,7 +350,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                 dialogue = pilot.getDialogue(planeIdx);
                 repaint();
             }
-        } else {
+        } else if (mayorDay1Idx < GraphicsPanel.getMicheal().getMichealDay1Length() - 1) {
             planeIdx++;
             if (e.getSource() instanceof JButton && e.getSource() == theEmoOne) {
                 requestFocusInWindow();
@@ -352,6 +370,10 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                 dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
                 repaint();
             }
+        } else {
+            ambience.stop();
+            ambience.close();
+            enclosingFrame.setVisible(false);
         }
     }
 
