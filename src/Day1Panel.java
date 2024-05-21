@@ -301,6 +301,9 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                     thePinkOne.setLocation(-790, -770);
                     button.setLocation(820, 450);
                 }
+                if (mayorDay1Idx == 8) {
+
+                }
             }
             g.drawString(dialogue, 100, 500);
         }
