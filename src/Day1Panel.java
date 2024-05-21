@@ -32,12 +32,17 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private BufferedImage planeBackground;
     private BufferedImage beach;
     private BufferedImage mayorHouse;
+    private BufferedImage emoHouse;
+    private BufferedImage preppyHouse;
     private JButton button;
     private JButton okaySorry;
     private JButton ughFine;
     private JButton whatWolves;
+    private JButton theEmoOne;
+    private JButton thePinkOne;
     private JFrame enclosingFrame;
     private Clip ambience;
+    private static String house;
 
     public Day1Panel (JFrame frame) {
         mayorX = 0;
@@ -115,6 +120,18 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             System.out.println(e.getMessage());
         }
 
+        try {
+            emoHouse = ImageIO.read(new File("src/goth.jpg"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            preppyHouse = ImageIO.read(new File("src/preppy.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
         button = new JButton("⟹");
         add(button);
         button.addActionListener(this);
@@ -127,6 +144,12 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         whatWolves = new JButton("Werewolves?");
         add(whatWolves);
         whatWolves.addActionListener(this);
+        theEmoOne = new JButton("The gothic one!");
+        add(theEmoOne);
+        theEmoOne.addActionListener(this);
+        thePinkOne = new JButton("The pink one!");
+        add(thePinkOne);
+        thePinkOne.addActionListener(this);
         dialogue = pilot.getDialogue(planeIdx);
         playIntro();
     }
@@ -184,6 +207,8 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             whatWolves.setLocation(-400, -400);
             okaySorry.setLocation(-400, -400);
             ughFine.setLocation(-400, -400);
+            theEmoOne.setLocation(-400, -400);
+            thePinkOne.setLocation(-400, -400);
             g.fillRect(0, 0, 900, 600);
             g.drawImage(planeBackground,46, 0, null);
             g.fillRect(0, 400, 900, 200);
@@ -254,7 +279,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             } else {
                 g.drawImage(mayorImg, 300, 200, null);
                 g.drawImage(playerStand, 500, 200, null);
-                if (mayorDay1Idx > 2 && mayorDay1Idx < 6) {
+                if (mayorDay1Idx > 2 && mayorDay1Idx < 7) {
                     g.drawImage(grass, 0, 0, null);
                     g.setColor(Color.BLACK);
                     g.fillRect(0, 400, 900, 200);
@@ -263,6 +288,18 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                     if (mayorDay1Idx == 5) {
                         g.drawImage(mayorHouse, 100, 0, null);
                     }
+                    if (mayorDay1Idx == 6) {
+                        g.drawImage(emoHouse, 200, 300, null);
+                        g.drawImage(preppyHouse, 400, 300, null);
+                        button.setLocation(-400, -400);
+                        theEmoOne.setLocation(790, 430);
+                        thePinkOne.setLocation(790, 470);
+                    }
+                }
+                if (mayorDay1Idx == 7) {
+                    theEmoOne.setLocation(-790, -730);
+                    thePinkOne.setLocation(-790, -770);
+                    button.setLocation(820, 450);
                 }
             }
             g.drawString(dialogue, 100, 500);
@@ -294,7 +331,19 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             }
         } else {
             planeIdx++;
-            if (e.getSource() instanceof JButton) {
+            if (e.getSource() instanceof JButton && e.getSource() == theEmoOne) {
+                requestFocusInWindow();
+                house = "src/goth.jpg";
+                mayorDay1Idx++;
+                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == thePinkOne) {
+                requestFocusInWindow();
+                house = "src/preppy.png";
+                mayorDay1Idx++;
+                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                repaint();
+            } else if (e.getSource()  instanceof JButton) {
                 requestFocusInWindow();
                 mayorDay1Idx++;
                 dialogue = mayor.getDay1Dialogue(mayorDay1Idx);

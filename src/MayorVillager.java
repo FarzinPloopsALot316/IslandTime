@@ -47,7 +47,7 @@ public class MayorVillager extends Villager {
         day1.add("This is the grassy spot I've cleared for me, you, and all the friends we're gonna have!"); //3
         day1.add("I'll be placing my quarters along the top left. Your house will be nearby mine, hah haa."); //4
         day1.add("My house will probably look like this! I picked the design myself!"); //5
-        day1.add("Which design would you like for your very own vacation home?");
+        day1.add("Which design would you like for your very own vacation home?"); //6
         day1.add("Sounds great! I can have both our houses done by tonight, hah haa!");
 
     }
