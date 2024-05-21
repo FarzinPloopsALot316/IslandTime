@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class WoodPanel extends JPanel implements ActionListener {
-    private final double MOVE_AMT = 0.2;
+    private final double MOVE_AMT = 0.4;
     private JFrame enclosingFrame;
     private Player player;
     private double playerX;

@@ -13,6 +13,9 @@ public class Player {
     private final double MOVE_AMT = 0.2;
     private double xCoord;
     private double yCoord;
+    private boolean facingRight;
+    private boolean facingLeft;
+
 
     public Player(String name, String birthMonth, int birthDate) {
         this.name = name;
