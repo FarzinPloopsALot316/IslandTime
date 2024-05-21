@@ -6,6 +6,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private MayorVillager mayor;
@@ -34,6 +37,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private JButton ughFine;
     private JButton whatWolves;
     private JFrame enclosingFrame;
+    private Clip ambience;
 
     public Day1Panel (JFrame frame) {
         mayorX = 0;
@@ -124,6 +128,55 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         add(whatWolves);
         whatWolves.addActionListener(this);
         dialogue = pilot.getDialogue(planeIdx);
+        playIntro();
+    }
+
+    public void playIntro () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Intro.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playAmbience () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Ambience.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playStatic () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Static.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playRadio () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/radio.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void paintComponent (Graphics g) {
@@ -157,6 +210,9 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             }
             if (planeIdx == 10) {
                 g.setColor(Color.PINK);
+                ambience.stop();
+                ambience.close();
+                playRadio();
             }
             if (planeIdx > 10 && planeIdx < 18) {
                 g.setColor(Color.YELLOW);
@@ -171,6 +227,9 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             if (planeIdx == 20) {
                 button.setLocation(820, 450);
                 whatWolves.setLocation(-400, -400);
+                ambience.stop();
+                ambience.close();
+                playAmbience();
             }
             if (planeIdx == 24) {
                 g.setColor(Color.PINK);
@@ -189,6 +248,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             button.setLocation(820, 450);
             g.setColor(Color.WHITE);
             if (mayorDay1Idx == 0) {
+                playIntro();
                 g.drawImage(playerRight, 500, 200, null);
                 g.drawImage(mayorRight, 0, 200, null);
             } else {

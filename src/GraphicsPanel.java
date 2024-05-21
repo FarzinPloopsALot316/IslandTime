@@ -6,6 +6,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class GraphicsPanel extends JPanel implements KeyListener, MouseListener, ActionListener {
     private static MayorVillager Micheal;
@@ -27,6 +30,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private BufferedImage background;
     private String dialogue;
     private int introIdx;
+    private Clip ambience;
 
     public GraphicsPanel (JFrame frame) {
         enclosingFrame = frame;
@@ -65,6 +69,43 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         add(textField);
         textField.addActionListener(this);
         dialogue = Micheal.getDialogue(0);
+        playIntro();
+    }
+
+    public void playIntro () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Intro.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playAmbience () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Ambience.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playStatic () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Static.wav").getAbsoluteFile());
+            ambience = AudioSystem.getClip();
+            ambience.open(audioInputStream);
+            ambience.loop(Clip.LOOP_CONTINUOUSLY);
+            ambience.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void paintComponent (Graphics g) {
@@ -111,7 +152,15 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
             g.drawImage(crazyImg, 375, 275, null);
             g.setColor(Color.BLACK);
             g.fillRect(0, 400, 900, 200);
+            ambience.stop();
+            ambience.close();
+            playStatic();
             g.setColor(Color.RED);
+        }
+        if (introIdx == 23) {
+            ambience.stop();
+            ambience.close();
+            playIntro();
         }
         g.drawString(dialogue, 100, 500);
     }
@@ -217,6 +266,8 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
                 repaint();
             }
         } else {
+            ambience.stop();
+            ambience.close();
             enclosingFrame.setVisible(false);
             new Day1Frame();
         }
