@@ -280,6 +280,8 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             button.setLocation(820, 450);
             g.setColor(Color.WHITE);
             if (mayorDay1Idx == 0) {
+                ambience.stop();
+                ambience.close();
                 playIntro();
                 g.drawImage(playerRight, 500, 200, null);
                 g.drawImage(mayorRight, 0, 200, null);
@@ -374,6 +376,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             ambience.stop();
             ambience.close();
             enclosingFrame.setVisible(false);
+            new WoodFrame();
         }
     }
 

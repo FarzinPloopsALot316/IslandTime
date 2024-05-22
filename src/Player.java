@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Player {
-    private String playerHouse;
     private String name;
     private String birthMonth;
     private int birthDate;
@@ -15,6 +14,13 @@ public class Player {
     private double yCoord;
     private boolean facingRight;
     private boolean facingLeft;
+    private boolean standing;
+
+    private BufferedImage playerStand;
+    private BufferedImage playerLeft;
+    private BufferedImage playerRight;
+    private BufferedImage currentImage;
+    private BufferedImage playerHouse;
 
 
     public Player(String name, String birthMonth, int birthDate) {
@@ -23,17 +29,48 @@ public class Player {
         this.birthDate = birthDate;
         xCoord = 300;
         yCoord = 300;
-        playerHouse = "src/MayorHome.png";
+        try {
+            playerStand = ImageIO.read(new File("src/PlayerStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            playerLeft = ImageIO.read(new File("src/PlayerLeft.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            playerRight = ImageIO.read(new File("src/PlayerRight.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        standing = true;
+        currentImage = playerStand;
     }
 
-    public void moveRight() {
-        if (xCoord + MOVE_AMT <= 900) {
-            xCoord += MOVE_AMT;
+    //moving and images
+
+
+    public void setPlayerHouse (String string) {
+        try {
+            playerHouse = ImageIO.read(new File(string));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public void setPlayerHouse (String string) {
-        playerHouse = string;
+    public BufferedImage getPlayerHouse () {
+        return playerHouse;
+    }
+
+    public int getHeight() {
+        return currentImage.getHeight();
+    }
+
+    public int getWidth() {
+        return currentImage.getWidth();
     }
 
     public void moveLeft() {
@@ -42,17 +79,37 @@ public class Player {
         }
     }
 
+    public void moveRight() {
+        if (xCoord + MOVE_AMT <= 900) {
+            xCoord += MOVE_AMT;
+        }
+    }
+
     public void moveUp() {
-        if (yCoord + MOVE_AMT <= 600) {
+        if (yCoord + MOVE_AMT >= 0) {
             yCoord += MOVE_AMT;
         }
     }
 
     public void moveDown () {
-        if (yCoord - MOVE_AMT >= 0) {
+        if (yCoord - MOVE_AMT <= 600) {
             yCoord -= MOVE_AMT;
         }
     }
+
+    public double getXCoord () {
+        return xCoord;
+    }
+
+    public double getYCoord () {
+        return yCoord;
+    }
+
+    public BufferedImage getCurrentImage () {
+        return currentImage;
+    }
+
+    //personal information
 
     public String getName () {
         return name;

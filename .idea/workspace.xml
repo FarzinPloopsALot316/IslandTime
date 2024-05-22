@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="added audio" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="added audio">
+      <change afterPath="$PROJECT_DIR$/src/day2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day3.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/intro.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/spooky.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intro.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,8 +71,8 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -289,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716317069101</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added audio">
+      <option name="closed" value="true" />
+      <created>1716317344548</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716317344549</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
