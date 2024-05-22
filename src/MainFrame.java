@@ -14,8 +14,4 @@ public class MainFrame {
 
         frame.setVisible(true);
     }
-
-    public void run() {
-        panel.repaint();
-    }
 }

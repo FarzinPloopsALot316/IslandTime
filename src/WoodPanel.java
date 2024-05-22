@@ -24,6 +24,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     private BufferedImage grassField;
     private boolean[] pressedKeys;
     private int woodCount;
+    private int woodHeight;
+    private int woodWidth;
     private Clip sound;
 
     public WoodPanel (JFrame enclosingFrame) {
@@ -33,6 +35,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         pressedKeys = new boolean[128];
         addKeyListener(this);
         setFocusable(true);
+        requestFocusInWindow();
         try {
             playerStand = ImageIO.read(new File("src/PlayerStand.png"));
         } catch (IOException e) {
@@ -62,6 +65,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        woodWidth = wood.getWidth();
+        woodHeight = wood.getHeight();
         playIntro();
     }
 
@@ -79,7 +84,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
         g.drawImage(grassField, 0, 0, null);
-        g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), null);
+        g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         //player moves left (a)
         if (pressedKeys[65]) {
             player.moveLeft();
@@ -99,7 +104,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         if (pressedKeys[83]) {
             player.moveDown();
         }
-        g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), null);
     }
 
     public void keyTyped(KeyEvent e) { }

@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class WoodFrame {
+public class WoodFrame implements Runnable {
     private WoodPanel panel;
 
     public WoodFrame () {
@@ -13,9 +13,13 @@ public class WoodFrame {
         frame1.add(panel);
 
         frame1.setVisible(true);
+        Thread thread = new Thread(this);
+        thread.start();
     }
 
     public void run() {
-        panel.repaint();
+        while (true) {
+            panel.repaint();
+        }
     }
 }

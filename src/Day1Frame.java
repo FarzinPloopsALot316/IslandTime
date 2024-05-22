@@ -14,8 +14,4 @@ public class Day1Frame {
 
         frame1.setVisible(true);
     }
-
-    public void run() {
-        panel.repaint();
-    }
 }
