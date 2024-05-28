@@ -65,8 +65,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        woodWidth = wood.getWidth();
-        woodHeight = wood.getHeight();
         playIntro();
     }
 
@@ -88,11 +86,13 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         //player moves left (a)
         if (pressedKeys[65]) {
             player.moveLeft();
+            g.drawImage(playerLeft, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves right (d)
         if (pressedKeys[68]) {
             player.moveRight();
+            g.drawImage(playerRight, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves up (w)

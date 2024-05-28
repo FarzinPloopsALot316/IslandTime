@@ -46,6 +46,12 @@ public class Player {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        try {
+            currentImage = ImageIO.read(new File("src/PlayerStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
         standing = true;
         currentImage = playerStand;
     }
@@ -80,7 +86,7 @@ public class Player {
     }
 
     public void moveRight() {
-        if (xCoord + MOVE_AMT <= 900) {
+        if (xCoord + MOVE_AMT <= 725) {
             xCoord += MOVE_AMT;
         }
     }
@@ -92,7 +98,7 @@ public class Player {
     }
 
     public void moveDown () {
-        if (yCoord + MOVE_AMT <= 600) {
+        if (yCoord + MOVE_AMT <= 389) {
             yCoord += MOVE_AMT;
         }
     }
