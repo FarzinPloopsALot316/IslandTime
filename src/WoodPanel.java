@@ -96,19 +96,30 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         g.drawImage(grassField, 0, 0, null);
         g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < logs.size(); i++) {
             g.drawImage(wood, logs.get(i).getX(), logs.get(i).getY(), logs.get(i).getWidthAndHeight(), logs.get(i).getWidthAndHeight(),null);
+            if (player.playerRect().intersects(logs.get(i).woodRect())) {
+                woodCount++;
+                logs.remove(i);
+                i--;
+            }
         }
+
+        if (woodCount == 5) {
+            enclosingFrame.setVisible(false);
+            new goBackToSleepFrame();
+        }
+
         //player moves left (a)
         if (pressedKeys[65]) {
             player.moveLeft();
-            g.drawImage(playerLeft, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
+            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves right (d)
         if (pressedKeys[68]) {
             player.moveRight();
-            g.drawImage(playerRight, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
+            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves up (w)
@@ -133,6 +144,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         pressedKeys[key] = false;
+        player.setCurrentImage(playerStand);
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Wood {
     private int widthAndHeight;
     private int x;
@@ -19,5 +21,10 @@ public class Wood {
 
     public int getX() {
         return x;
+    }
+
+    public Rectangle woodRect() {
+        Rectangle rect = new Rectangle(x, y, widthAndHeight, widthAndHeight);
+        return rect;
     }
 }

@@ -82,12 +82,14 @@ public class Player {
     public void moveLeft() {
         if (xCoord - MOVE_AMT >= 0) {
             xCoord -= MOVE_AMT;
+            currentImage = playerLeft;
         }
     }
 
     public void moveRight() {
         if (xCoord + MOVE_AMT <= 725) {
             xCoord += MOVE_AMT;
+            currentImage = playerRight;
         }
     }
 
@@ -120,6 +122,10 @@ public class Player {
         int imageWidth = currentImage.getWidth();
         Rectangle rect = new Rectangle((int) xCoord, (int) yCoord, imageWidth, imageHeight);
         return rect;
+    }
+
+    public void setCurrentImage(BufferedImage currentImage) {
+        this.currentImage = currentImage;
     }
 
     //personal information
