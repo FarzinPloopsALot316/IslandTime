@@ -106,6 +106,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         }
 
         if (woodCount == 5) {
+            sound.stop();
+            sound.close();
             enclosingFrame.setVisible(false);
             new goBackToSleepFrame();
         }
