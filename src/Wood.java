@@ -1,22 +1,16 @@
 public class Wood {
-    private int width;
-    private int height;
+    private int widthAndHeight;
     private int x;
     private int y;
 
-    public Wood (int width, int height, int x, int y) {
-        this.width =  width;
-        this.height = height;
+    public Wood (int x, int y) {
+        this.widthAndHeight = 75;
         this.x = x;
         this.y =y;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
+    public int getWidthAndHeight() {
+        return widthAndHeight;
     }
 
     public int getY() {

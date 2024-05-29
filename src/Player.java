@@ -115,6 +115,13 @@ public class Player {
         return currentImage;
     }
 
+    public Rectangle playerRect() {
+        int imageHeight = currentImage.getHeight();
+        int imageWidth = currentImage.getWidth();
+        Rectangle rect = new Rectangle((int) xCoord, (int) yCoord, imageWidth, imageHeight);
+        return rect;
+    }
+
     //personal information
 
     public String getName () {
