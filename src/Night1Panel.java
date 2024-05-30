@@ -58,7 +58,7 @@ public class Night1Panel extends JFrame implements ActionListener {
         strings.add("Hah haa... you look tired. I'll let you sleep.");
         strings.add("I'll get you some more anesthesia, if you want.");
         strings.add("Hah haa. I'm joking silly.");
-        strings.add("Sweet dreams...");
+        strings.add("Sweet dreams..."); //13
     }
 
     public void playIntro () {
@@ -85,11 +85,17 @@ public class Night1Panel extends JFrame implements ActionListener {
         g.drawString(dialogue, 100, 500);
     }
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() instanceof JButton) {
-            requestFocusInWindow();
-            idx++;
-            dialogue = strings.get(idx);
-            repaint();
+        if (idx < strings.size() -1) {
+            if (e.getSource() instanceof JButton) {
+                requestFocusInWindow();
+                idx++;
+                dialogue = strings.get(idx);
+                repaint();
+            }
+        } else {
+            sound.stop();
+            sound.close();
+            enclosingFrame.setVisible(false);
         }
     }
 }
