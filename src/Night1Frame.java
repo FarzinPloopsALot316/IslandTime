@@ -4,7 +4,7 @@ public class Night1Frame {
     public Night1Frame () {
         JFrame frame = new JFrame("Island Time Day 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(900, 600); // 540 height of image + 40 for window menu bar
+        frame.setSize(900, 600);
         frame.setLocationRelativeTo(null); // auto-centers frame in screen
 
         panel = new Night1Panel(frame);

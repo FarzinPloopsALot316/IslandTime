@@ -10,7 +10,7 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class Night1Panel extends JFrame implements ActionListener {
+public class Night1Panel extends JPanel implements ActionListener {
     private JFrame enclosingFrame;
     private BufferedImage mayorImg;
     private BufferedImage playerStand;
@@ -84,6 +84,7 @@ public class Night1Panel extends JFrame implements ActionListener {
         }
         g.drawString(dialogue, 100, 500);
     }
+
     public void actionPerformed(ActionEvent e) {
         if (idx < strings.size() -1) {
             if (e.getSource() instanceof JButton) {

@@ -182,7 +182,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()  instanceof JButton) {
+        if (e.getSource() instanceof JButton) {
+            System.out.println("here");
             spooky.stop();
             spooky.close();
             enclosingFrame.setVisible(false);
