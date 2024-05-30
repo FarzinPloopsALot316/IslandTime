@@ -5,36 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="HELP ME">
-      <change afterPath="$PROJECT_DIR$/src/basement.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goBackToSleepFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goBackToSleepPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Night1Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Night1Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/campfire.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/Ambience.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ambience.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/Static.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/Static.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/day2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/day2.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/day3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/day3.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/intro.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/intro.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/radio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/radio.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireplaylistongod/spooky.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/spooky.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/CliffSide.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/CliffSide.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/MayorHome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorHome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/MichealCrazy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MichealCrazy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/MichealLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MichealLeft.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/MichealRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MichealRight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/MichealStand.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/MichealStand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/PlayerLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerLeft.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/PlayerRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerRight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/PlayerStand.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerStand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/goth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/goth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/grass.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/grass.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/islandBeach.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/islandBeach.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/plane.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/plane.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/preppy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/preppy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/reception.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/reception.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagos/wood.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/wood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goBackToSleepFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goBackToSleepPanel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +74,20 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\imagos" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="IslandTime" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

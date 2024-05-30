@@ -23,14 +23,20 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     private BufferedImage playerLeft;
     private BufferedImage wood;
     private BufferedImage grassField;
+    private BufferedImage basement;
     private boolean[] pressedKeys;
     private int woodCount;
     private int woodHeight;
     private int woodWidth;
     private Clip sound;
+    private Clip spooky;
     private ArrayList<Wood> logs;
+    private JButton button;
 
     public WoodPanel (JFrame enclosingFrame) {
+        button = new JButton("⟹");
+        add(button);
+        button.addActionListener(this);
         logs = new ArrayList<>();
         Wood wood1 = new Wood(100, 100);
         Wood wood2 = new Wood(100, 200);
@@ -78,6 +84,12 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        try {
+            basement = ImageIO.read(new File("src/basement.jpg"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
         playIntro();
     }
 
@@ -92,8 +104,22 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
             System.out.println(e);
         }
     }
+
+    public void playSpooky () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/spooky.wav").getAbsoluteFile());
+            spooky = AudioSystem.getClip();
+            spooky.open(audioInputStream);
+            spooky.loop(Clip.LOOP_CONTINUOUSLY);
+            spooky.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
+        button.setLocation(-820, -450);
         g.drawImage(grassField, 0, 0, null);
         g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         for (int i = 0; i < logs.size(); i++) {
@@ -106,10 +132,16 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         }
 
         if (woodCount == 5) {
+            g.fillRect(0, 0, 900, 600);
+            g.drawImage(basement, 0, 0, null);
             sound.stop();
             sound.close();
-            enclosingFrame.setVisible(false);
-            new goBackToSleepFrame();
+            playSpooky();
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            g.setColor(Color.RED);
+            g.drawString("Go back to sleep... I'm, not done with you, hah haa...", 100, 500);
+            button.setLocation(820, 450);
         }
 
         //player moves left (a)
@@ -150,6 +182,11 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource()  instanceof JButton) {
+            spooky.stop();
+            spooky.close();
+            enclosingFrame.setVisible(false);
+            new Night1Frame();
+        }
     }
 }
