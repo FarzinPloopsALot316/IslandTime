@@ -29,7 +29,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     private int woodHeight;
     private int woodWidth;
     private Clip sound;
-    private Clip spooky;
     private ArrayList<Wood> logs;
     private JButton button;
 
@@ -108,10 +107,10 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     public void playSpooky () {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/spooky.wav").getAbsoluteFile());
-            spooky = AudioSystem.getClip();
-            spooky.open(audioInputStream);
-            spooky.loop(Clip.LOOP_CONTINUOUSLY);
-            spooky.start();
+            sound = AudioSystem.getClip();
+            sound.open(audioInputStream);
+            sound.loop(Clip.LOOP_CONTINUOUSLY);
+            sound.start();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -184,8 +183,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
             System.out.println("here");
-            spooky.stop();
-            spooky.close();
+            sound.stop();
+            sound.close();
             enclosingFrame.setVisible(false);
             new Night1Frame();
         }

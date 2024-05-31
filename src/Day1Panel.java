@@ -41,6 +41,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     private JButton whatWolves;
     private JButton theEmoOne;
     private JButton thePinkOne;
+    private JButton skip;
     private JFrame enclosingFrame;
     private Clip ambience;
     private static String house;
@@ -157,6 +158,9 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         thePinkOne = new JButton("The pink one!");
         add(thePinkOne);
         thePinkOne.addActionListener(this);
+        skip = new JButton("Skip ⟹");
+        add(skip);
+        skip.addActionListener(this);
         dialogue = pilot.getDialogue(planeIdx);
         playIntro();
     }
@@ -220,6 +224,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             g.drawImage(planeBackground,46, 0, null);
             g.fillRect(0, 400, 900, 200);
             button.setLocation(820, 450);
+            skip.setLocation(790, 50);
             g.setColor(Color.WHITE);
             if (planeIdx < 3) {
                 g.setColor(Color.PINK);
@@ -330,53 +335,61 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (planeIdx < pilot.getPlaneDialogueLength() - 1) {
-            if (e.getSource() instanceof JButton && e.getSource() == okaySorry) {
-                requestFocusInWindow();
-                planeIdx = 7;
-                dialogue = pilot.getDialogue(planeIdx);
-                repaint();
-            } else if (e.getSource() instanceof JButton && e.getSource() == ughFine) {
-                requestFocusInWindow();
-                planeIdx = 8;
-                dialogue = pilot.getDialogue(planeIdx);
-                repaint();
-            } else if (e.getSource() instanceof JButton && (planeIdx == 7 || planeIdx == 8)) {
-                requestFocusInWindow();
-                planeIdx = 9;
-                dialogue = pilot.getDialogue(planeIdx);
-                repaint();
-            } else if (e.getSource() instanceof JButton) {
-                requestFocusInWindow();
-                planeIdx++;
-                dialogue = pilot.getDialogue(planeIdx);
-                repaint();
-            }
-        } else if (mayorDay1Idx < GraphicsPanel.getMicheal().getMichealDay1Length() - 1) {
-            planeIdx++;
-            if (e.getSource() instanceof JButton && e.getSource() == theEmoOne) {
-                requestFocusInWindow();
-                house = "src/goth.jpg";
-                mayorDay1Idx++;
-                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
-                repaint();
-            } else if (e.getSource() instanceof JButton && e.getSource() == thePinkOne) {
-                requestFocusInWindow();
-                house = "src/preppy.png";
-                mayorDay1Idx++;
-                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
-                repaint();
-            } else if (e.getSource()  instanceof JButton) {
-                requestFocusInWindow();
-                mayorDay1Idx++;
-                dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
-                repaint();
-            }
-        } else {
+        if (e.getSource() instanceof JButton && e.getSource() == skip) {
+            house = "src/preppy.png";
             ambience.stop();
             ambience.close();
             enclosingFrame.setVisible(false);
             new WoodFrame();
+        } else {
+            if (planeIdx < pilot.getPlaneDialogueLength() - 1) {
+                if (e.getSource() instanceof JButton && e.getSource() == okaySorry) {
+                    requestFocusInWindow();
+                    planeIdx = 7;
+                    dialogue = pilot.getDialogue(planeIdx);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && e.getSource() == ughFine) {
+                    requestFocusInWindow();
+                    planeIdx = 8;
+                    dialogue = pilot.getDialogue(planeIdx);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && (planeIdx == 7 || planeIdx == 8)) {
+                    requestFocusInWindow();
+                    planeIdx = 9;
+                    dialogue = pilot.getDialogue(planeIdx);
+                    repaint();
+                } else if (e.getSource() instanceof JButton) {
+                    requestFocusInWindow();
+                    planeIdx++;
+                    dialogue = pilot.getDialogue(planeIdx);
+                    repaint();
+                }
+            } else if (mayorDay1Idx < GraphicsPanel.getMicheal().getMichealDay1Length() - 1) {
+                planeIdx++;
+                if (e.getSource() instanceof JButton && e.getSource() == theEmoOne) {
+                    requestFocusInWindow();
+                    house = "src/goth.jpg";
+                    mayorDay1Idx++;
+                    dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && e.getSource() == thePinkOne) {
+                    requestFocusInWindow();
+                    house = "src/preppy.png";
+                    mayorDay1Idx++;
+                    dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                    repaint();
+                } else if (e.getSource()  instanceof JButton) {
+                    requestFocusInWindow();
+                    mayorDay1Idx++;
+                    dialogue = mayor.getDay1Dialogue(mayorDay1Idx);
+                    repaint();
+                }
+            } else {
+                ambience.stop();
+                ambience.close();
+                enclosingFrame.setVisible(false);
+                new WoodFrame();
+            }
         }
     }
 

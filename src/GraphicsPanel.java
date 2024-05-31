@@ -24,6 +24,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private JButton button;
     private JButton accept;
     private JButton decline;
+    private JButton skip;
     private BufferedImage mayorImg;
     private BufferedImage crazyImg;
     private JTextField textField;
@@ -63,6 +64,9 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         decline = new JButton("No, sorry.");
         add(decline);
         decline.addActionListener(this);
+        skip = new JButton("Skip ⟹");
+        add(skip);
+        skip.addActionListener(this);
         addKeyListener(this);
         addMouseListener(this);
         textField = new JTextField(15);
@@ -117,6 +121,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         g.fillRect(0, 400, 900, 200);
         g.setColor(Color.white);
         button.setLocation(820, 450);
+        skip.setLocation(790, 50);
         if (introIdx == 7) {
             textField.setLocation(350, 400);
         }
@@ -212,64 +217,73 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (introIdx < Micheal.getMichealIntroLength() - 1) {
-            if (e.getSource() instanceof JButton && introIdx == 7) {
-                requestFocusInWindow();
-                name = textField.getText();
-                introIdx++;
-                dialogue = name + ". " + Micheal.getDialogue(introIdx);
-                textField.setLocation(-300, -300);
-                repaint();
-            } else if (e.getSource() instanceof JButton && introIdx == 12) {
-                requestFocusInWindow();
-                String townName = textField.getText();
-                town = new Town(townName);
-                introIdx++;
-                dialogue = Micheal.getDialogue(introIdx) + town.getName() + ".";
-                textField.setLocation(-300, -300);
-                repaint();
-            } else if (e.getSource() instanceof JButton && e.getSource() == accept) {
-                requestFocusInWindow();
-                accepted = true;
-                introIdx = 19;
-                accept.setLocation(-350, 300);
-                decline.setLocation(-400, 300);
-                button.setLocation(820, 450);
-                dialogue = Micheal.getDialogue(introIdx);
-            } else if (e.getSource() instanceof JButton && e.getSource() == decline) {
-                requestFocusInWindow();
-                accepted = false;
-                introIdx = 22;
-                accept.setLocation(-350, 300);
-                decline.setLocation(-400, 300);
-                button.setLocation(820, 450);
-                dialogue = Micheal.getDialogue(introIdx);
-            } else if (e.getSource() instanceof JButton && introIdx == 20) {
-                requestFocusInWindow();
-                month = textField.getText();
-                introIdx++;
-                dialogue = Micheal.getDialogue(introIdx);
-                textField.setLocation(-300, -300);
-                repaint();
-            } else if (e.getSource() instanceof JButton && introIdx == 21) {
-                requestFocusInWindow();
-                date = Integer.parseInt(textField.getText());
-                introIdx = 24;
-                dialogue = Micheal.getDialogue(introIdx);
-                textField.setLocation(-300, -300);
-                player = new Player(name, month, date);
-                repaint();
-            } else if (e.getSource() instanceof JButton) {
-                requestFocusInWindow();
-                introIdx++;
-                dialogue = Micheal.getDialogue(introIdx);
-                repaint();
-            }
-        } else {
+        if (e.getSource() instanceof JButton && e.getSource() == skip) {
+            player = new Player("Player", "N/A", -1);
+            town = new Town("Player's Town");
             ambience.stop();
             ambience.close();
             enclosingFrame.setVisible(false);
             new Day1Frame();
+        } else {
+            if (introIdx < Micheal.getMichealIntroLength() - 1) {
+                if (e.getSource() instanceof JButton && introIdx == 7) {
+                    requestFocusInWindow();
+                    name = textField.getText();
+                    introIdx++;
+                    dialogue = name + ". " + Micheal.getDialogue(introIdx);
+                    textField.setLocation(-300, -300);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && introIdx == 12) {
+                    requestFocusInWindow();
+                    String townName = textField.getText();
+                    town = new Town(townName);
+                    introIdx++;
+                    dialogue = Micheal.getDialogue(introIdx) + town.getName() + ".";
+                    textField.setLocation(-300, -300);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && e.getSource() == accept) {
+                    requestFocusInWindow();
+                    accepted = true;
+                    introIdx = 19;
+                    accept.setLocation(-350, 300);
+                    decline.setLocation(-400, 300);
+                    button.setLocation(820, 450);
+                    dialogue = Micheal.getDialogue(introIdx);
+                } else if (e.getSource() instanceof JButton && e.getSource() == decline) {
+                    requestFocusInWindow();
+                    accepted = false;
+                    introIdx = 22;
+                    accept.setLocation(-350, 300);
+                    decline.setLocation(-400, 300);
+                    button.setLocation(820, 450);
+                    dialogue = Micheal.getDialogue(introIdx);
+                } else if (e.getSource() instanceof JButton && introIdx == 20) {
+                    requestFocusInWindow();
+                    month = textField.getText();
+                    introIdx++;
+                    dialogue = Micheal.getDialogue(introIdx);
+                    textField.setLocation(-300, -300);
+                    repaint();
+                } else if (e.getSource() instanceof JButton && introIdx == 21) {
+                    requestFocusInWindow();
+                    date = Integer.parseInt(textField.getText());
+                    introIdx = 24;
+                    dialogue = Micheal.getDialogue(introIdx);
+                    textField.setLocation(-300, -300);
+                    player = new Player(name, month, date);
+                    repaint();
+                } else if (e.getSource() instanceof JButton) {
+                    requestFocusInWindow();
+                    introIdx++;
+                    dialogue = Micheal.getDialogue(introIdx);
+                    repaint();
+                }
+            } else {
+                ambience.stop();
+                ambience.close();
+                enclosingFrame.setVisible(false);
+                new Day1Frame();
+            }
         }
     }
 }

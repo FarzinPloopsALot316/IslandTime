@@ -13,21 +13,33 @@ import javax.sound.sampled.Clip;
 public class Night1Panel extends JPanel implements ActionListener {
     private JFrame enclosingFrame;
     private BufferedImage mayorImg;
+    private BufferedImage mayorLeft;
     private BufferedImage playerStand;
     private BufferedImage background;
     private Clip sound;
     private JButton button;
+    private JButton skip;
     private ArrayList<String> strings;
     private int idx;
     private String dialogue;
 
     public Night1Panel (JFrame frame) {
+        idx = 0;
         button = new JButton("⟹");
         add(button);
         button.addActionListener(this);
+        skip = new JButton("Skip ⟹");
+        add(skip);
+        skip.addActionListener(this);
         enclosingFrame = frame;
         try {
             playerStand = ImageIO.read(new File("src/PlayerStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            mayorLeft = ImageIO.read(new File("src/MichealLeft.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -43,7 +55,6 @@ public class Night1Panel extends JPanel implements ActionListener {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        playIntro();
         strings = new ArrayList<>();
         strings.add("Oh wonderful! You found all the wood! Hah haa!");
         strings.add("How sweet! Our camp fire is ablaze, and the view is like nothing before on this night!");
@@ -59,6 +70,8 @@ public class Night1Panel extends JPanel implements ActionListener {
         strings.add("I'll get you some more anesthesia, if you want.");
         strings.add("Hah haa. I'm joking silly.");
         strings.add("Sweet dreams..."); //13
+        dialogue = strings.get(idx);
+        playIntro();
     }
 
     public void playIntro () {
@@ -76,8 +89,16 @@ public class Night1Panel extends JPanel implements ActionListener {
     public void paintComponent (Graphics g) {
         g.fillRect(0, 0, 900, 600);
         g.drawImage(background,0, 0, null);
+        if (idx > 2 && idx < 8) {
+            g.drawImage(playerStand, 500,220, null);
+            g.drawImage(mayorLeft, 200,220, null);
+        } else {
+            g.drawImage(playerStand, 500,220, null);
+            g.drawImage(mayorImg, 250,220, null);
+        }
         g.fillRect(0, 400, 900, 200);
         button.setLocation(820, 450);
+        skip.setLocation(790, 50);
         g.setColor(Color.white);
         if (idx == 2 || idx == 7 || idx == 9) {
             g.setColor(Color.green);
@@ -86,17 +107,23 @@ public class Night1Panel extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (idx < strings.size() -1) {
-            if (e.getSource() instanceof JButton) {
-                requestFocusInWindow();
-                idx++;
-                dialogue = strings.get(idx);
-                repaint();
-            }
-        } else {
+        if (e.getSource() instanceof JButton && e.getSource() == skip) {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+        } else {
+            if (idx < strings.size() -1) {
+                if (e.getSource() instanceof JButton) {
+                    requestFocusInWindow();
+                    idx++;
+                    dialogue = strings.get(idx);
+                    repaint();
+                }
+            } else {
+                sound.stop();
+                sound.close();
+                enclosingFrame.setVisible(false);
+            }
         }
     }
 }
