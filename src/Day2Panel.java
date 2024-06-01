@@ -170,13 +170,13 @@ public class Day2Panel extends JPanel implements ActionListener {
         g.fillRect(0, 0, 900, 600);
         g.drawImage(background,45, 0, null);
         g.fillRect(0, 400, 900, 200);
-        if (idx == 7) {
+        if (idx >= 7 && idx < 11) {
             g.drawImage(Riyun, 350,220, null);
         } else {
             g.drawImage(Riyun, 200,220, null);
         }
 
-        if (idx == 11) {
+        if (idx >= 11 && idx < 15) {
             g.drawImage(Needle, 350,220, null);
         } else {
             g.drawImage(Needle, 40,220, null);
@@ -202,7 +202,7 @@ public class Day2Panel extends JPanel implements ActionListener {
             sound.close();
             playDay2Sound();
         }
-        if (idx >= 7 && idx <= 11) {
+        if (idx >= 7 && idx <= 14) {
             g.drawImage(mayorLeft, 450,220, null);
         } else if (idx >= 16 && idx <= 19) {
             g.drawImage(crazyImg, 450,220, null);
