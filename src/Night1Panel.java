@@ -111,6 +111,7 @@ public class Night1Panel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            new Day2Frame();
         } else {
             if (idx < strings.size() -1) {
                 if (e.getSource() instanceof JButton) {
@@ -123,6 +124,7 @@ public class Night1Panel extends JPanel implements ActionListener {
                 sound.stop();
                 sound.close();
                 enclosingFrame.setVisible(false);
+                new Day2Frame();
             }
         }
     }

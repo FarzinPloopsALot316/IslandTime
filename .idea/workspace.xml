@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="HELP ME">
-      <change afterPath="$PROJECT_DIR$/src/Riyun.png" afterDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="riyun added">
+      <change afterPath="$PROJECT_DIR$/src/Needle.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day2Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Night1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night1Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Villager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Villager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +66,10 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\fireplaylistongod" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\imagos" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -358,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717161074503</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="riyun added">
+      <option name="closed" value="true" />
+      <created>1717270849181</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1717270849181</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -373,6 +378,7 @@
     <MESSAGE value="added audio" />
     <MESSAGE value="HELP ME" />
     <MESSAGE value="help how do i make the player move" />
-    <option name="LAST_COMMIT_MESSAGE" value="help how do i make the player move" />
+    <MESSAGE value="riyun added" />
+    <option name="LAST_COMMIT_MESSAGE" value="riyun added" />
   </component>
 </project>
