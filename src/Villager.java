@@ -1,29 +1,23 @@
 public class Villager {
+    private String name;
     private String catchphrase;
     private int age;
-    private String birthMonth;
-    private int birthDate;
 
-    public Villager (String catchphrase, int age, String birthMonth, int birthDate) {
+    public Villager (String name, String catchphrase, int age) {
+        this.name = name;
         this.catchphrase = catchphrase;
         this.age = age;
-        this.birthMonth = birthMonth;
-        this.birthDate = birthDate;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getCatchphrase () {
         return catchphrase;
     }
 
-    public int getBirthDate() {
-        return birthDate;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public String getBirthMonth () {
-        return birthMonth;
     }
 }

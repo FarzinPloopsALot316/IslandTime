@@ -171,7 +171,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         pressedKeys[key] = true;
-        System.out.println(e.getKeyCode());
     }
 
     public void keyReleased(KeyEvent e) {
@@ -182,7 +181,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            System.out.println("here");
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);

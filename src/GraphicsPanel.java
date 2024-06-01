@@ -37,7 +37,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         enclosingFrame = frame;
         introIdx = 0;
         name = "Player";
-        Micheal = new MayorVillager("hah haa", 24, "August", 15);
+        Micheal = new MayorVillager("Micheal","hah haa", 24);
         try {
             background = ImageIO.read(new File("src/reception.png"));
         } catch (IOException e) {

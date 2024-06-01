@@ -2,12 +2,13 @@ import java.util.ArrayList;
 
 public class MayorVillager extends Villager {
     private int friendship;
+    private String name;
     private ArrayList<String> intro;
     private ArrayList<String> day1;
     private ArrayList<String> night1;
 
-    public MayorVillager(String catchphrase, int age, String birthMonth, int birthDate) {
-        super(catchphrase, age, birthMonth, birthDate);
+    public MayorVillager(String name, String catchphrase, int age) {
+        super(name, catchphrase, age);
         this.friendship = 50;
 
         //intro list;

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="HELP ME">
-      <change afterPath="$PROJECT_DIR$/src/Day2Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Riyun.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MayorVillager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MayorVillager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Villager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Villager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,6 +372,7 @@
     <MESSAGE value="started day1" />
     <MESSAGE value="added audio" />
     <MESSAGE value="HELP ME" />
-    <option name="LAST_COMMIT_MESSAGE" value="HELP ME" />
+    <MESSAGE value="help how do i make the player move" />
+    <option name="LAST_COMMIT_MESSAGE" value="help how do i make the player move" />
   </component>
 </project>
