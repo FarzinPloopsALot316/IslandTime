@@ -91,7 +91,7 @@ public class Day2Panel extends JPanel implements ActionListener {
 
     public void paintComponent (Graphics g) {
         g.fillRect(0, 0, 900, 600);
-        g.drawImage(background,35, 0, null);
+        g.drawImage(background,45, 0, null);
 
     }
 
