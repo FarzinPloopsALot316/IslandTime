@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 public class WoodFrame implements Runnable {
+
     private WoodPanel panel;
 
     public WoodFrame () {

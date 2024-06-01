@@ -228,4 +228,12 @@ public class Day2Panel extends JPanel implements ActionListener {
             enclosingFrame.setVisible(false);
         }
     }
+
+    public Villager getRiyun () {
+        return riyun;
+    }
+
+    public Villager getNeedle () {
+        return needle;
+    }
 }
