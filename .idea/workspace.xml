@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="updating the grass animation panel">
-      <change afterPath="$PROJECT_DIR$/src/Day2MichealFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/woods.png" afterDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="almost done w day 2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day1Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,7 +408,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717293201688</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="almost done w day 2.">
+      <option name="closed" value="true" />
+      <created>1717363837654</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1717363837654</updated>
+    </task>
+    <task id="LOCAL-00043" summary="almost done w day 2.">
+      <option name="closed" value="true" />
+      <created>1717363867983</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1717363867983</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -437,6 +443,7 @@
     <MESSAGE value="day 2 panel" />
     <MESSAGE value="day 2 panel, scream audios" />
     <MESSAGE value="updating the grass animation panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating the grass animation panel" />
+    <MESSAGE value="almost done w day 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="almost done w day 2." />
   </component>
 </project>
