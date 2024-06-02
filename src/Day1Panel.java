@@ -266,7 +266,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                 whatWolves.setLocation(-400, -400);
                 ambience.stop();
                 ambience.close();
-                playAmbience();
+                playIntro();
             }
             if (planeIdx == 24) {
                 g.setColor(Color.PINK);
