@@ -1,6 +1,7 @@
 import javax.swing.*;
 public class Day1Frame {
     private Day1Panel panel;
+
     public Day1Frame() {
 
         JFrame frame1 = new JFrame("Island Time Day 1");

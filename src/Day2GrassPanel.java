@@ -23,6 +23,8 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
     private String playerHome;
     private String rDialogue;
     private String nDialogue;
+    private boolean riyunSpoke;
+    private boolean needleSpoke;
 
     private final double MOVE_AMT = 0.5;
     private JFrame enclosingFrame;
@@ -41,11 +43,20 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
     private Clip sound;
     private JButton rButton;
     private JButton nButton;
+    private JButton whatDoing;
+    private JButton whoYou;
+    private JButton micheal;
+    private JButton uhmMicheal;
+    private JButton nonsense;
+    private JButton dontWorry;
+    private JButton forReal;
+    private JButton michealSearch;
     private boolean[] pressedKeys;
     private ArrayList<String> riyunSpeaks;
     private ArrayList<String> needleSpeaks;
-
     public Day2GrassPanel (JFrame frame) {
+        this.riyunSpoke = false;
+        this.needleSpoke = false;
         this.NeedleIdx = 0;
         this.RiyunIdx = 0;
         this.player = GraphicsPanel.getPlayer();
@@ -72,12 +83,13 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         riyunSpeaks.add("It makes him feel suspicious, " + riyun.getCatchphrase());
         riyunSpeaks.add("And I think I saw him watching you sleep when I got here and looked for him.");
         riyunSpeaks.add("I walked into the tent wanting to ask him something, and he was just standing there, watching you.");
-        riyunSpeaks.add("I'd watch out for that creep if I were you, " + riyun.getCatchphrase());
+        riyunSpeaks.add("I'd watch out for that creep if I were you, " + riyun.getCatchphrase()); //13
 
-        riyunSpeaks.add("Suit yourself. I'm not the one getting stalked anyway, " + riyun.getCatchphrase());
-        riyunSpeaks.add("Yeah. For real. Be careful.");
+        riyunSpeaks.add("Suit yourself. I'm not the one getting stalked anyway, " + riyun.getCatchphrase()); //14
+        riyunSpeaks.add("Yeah. For real. Be careful."); //15
 
-        riyunSpeaks.add("Anyway, could you possibly leave? Tryna unpack some furniture here, " + riyun.getCatchphrase());
+        riyunSpeaks.add("Anyway, could you possibly leave? Tryna unpack some furniture here, " + riyun.getCatchphrase()); //16
+        riyunSpeaks.add("Should not print.");
 
 
         this.needleSpeaks = new ArrayList<>();
@@ -87,19 +99,20 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         needleSpeaks.add("i found a ant in the gras and made it my freind" + needle.getCatchphrase());
 
         needleSpeaks.add("i wanna have a good time hereee and make new friends and have fun" + needle.getCatchphrase());
-        needleSpeaks.add("then i wanna go make a tree house and then with friend and then go swimming and then blow up mount rushmore and then go cocnut tree harvestign and then-");
+        needleSpeaks.add("then i wanna go make a tree house and then with friend and then go swimming and then blow up mount rushmore and then go cocnut tree harvestign and then-"); //5
 
-        needleSpeaks.add("oh i like mikal" + needle.getCatchphrase());
+        needleSpeaks.add("oh i like mikal" + needle.getCatchphrase()); //5
         needleSpeaks.add("he is very nice but he is a very weird guy some time");
         needleSpeaks.add("this morning when I talk about mak new friend and i talk about you");
         needleSpeaks.add("and I say oh em gee I would love to meet " + player.getName() + " and mak new friend!");
-        needleSpeaks.add("he eyes turn mad and he turn mad and yell at me.");
-        needleSpeaks.add("plz watch out for him");
+        needleSpeaks.add("he eyes turn mad and he turn mad and yell at me");
+        needleSpeaks.add("plz watch out for him"); //10
 
-        needleSpeaks.add("oka! i trust you, fried!");
-        needleSpeaks.add("yaaa :(");
+        needleSpeaks.add("oka! i trust you, fried!"); //11
+        needleSpeaks.add("yaaa :("); //12
 
-        needleSpeaks.add("oh no me ant ran away sry I hav to look for ant bye " + player.getName() + "! " + needle.getCatchphrase());
+        needleSpeaks.add("oh no me ant ran away sry I hav to look for ant bye " + player.getName() + "! " + needle.getCatchphrase()); //13
+        needleSpeaks.add("Should not print.");
 
         this.rDialogue = riyunSpeaks.get(RiyunIdx);
         this.nDialogue = needleSpeaks.get(NeedleIdx);
@@ -113,6 +126,38 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         nButton = new JButton("⟹");
         add(nButton);
         nButton.addActionListener(this);
+
+        whatDoing = new JButton("What are you doing?");
+        add(whatDoing);
+        whatDoing.addActionListener(this);
+
+        whoYou = new JButton("Who are you again?");
+        add(whoYou);
+        whoYou.addActionListener(this);
+
+        micheal = new JButton("Opinions on Micheal?");
+        add(micheal);
+        micheal.addActionListener(this);
+
+        nonsense = new JButton("Nonsense!");
+        add(nonsense);
+        nonsense.addActionListener(this);
+
+        forReal = new JButton("Wait for real?");
+        add(forReal);
+        forReal.addActionListener(this);
+
+        uhmMicheal = new JButton("Uhm, opinions on Micheal?-");
+        add(uhmMicheal);
+        uhmMicheal.addActionListener(this);
+
+        dontWorry = new JButton("I'll be fine, thank you.");
+        add(dontWorry);
+        dontWorry.addActionListener(this);
+
+        michealSearch = new JButton("Search for Micheal?");
+        add(michealSearch);
+        michealSearch.addActionListener(this);
 
         pressedKeys = new boolean[128];
         addKeyListener(this);
@@ -198,8 +243,17 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         super.paintComponent(g);
         rButton.setLocation(-820, -450);
         nButton.setLocation(-840, -450);
+        whatDoing.setLocation(-720, -430);
+        whoYou.setLocation(-720, -470);
+        micheal.setLocation(-720, -470);
+        nonsense.setLocation(-720, -470);
+        dontWorry.setLocation(-820, -470);
+        forReal.setLocation(-720, -470);
+        uhmMicheal.setLocation(-720, -470);
+        nonsense.setLocation(-720, -470);
+        michealSearch.setLocation(-720, -470);
         riyun.setX(120);
-        riyun.setY(180);
+        riyun.setY(150);
         needle.setX(120);
         needle.setY(400);
         g.drawImage(background, 0,0, null);
@@ -211,14 +265,69 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         g.drawImage(Needle, needle.getX(), needle.getY(), null);
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
 
-        if (player.playerRect().intersects(riyun.VillagerRect()) && RiyunIdx < riyunSpeaks.size() - 1) { //remember to reset player coodinates after convo
+        if (player.playerRect().intersects(riyun.VillagerRect()) && RiyunIdx < riyunSpeaks.size() - 1) {//riyun's conversation
             g.drawImage(background, 0,0, null);
             g.fillRect(0, 400, 900, 200);
             rButton.setLocation(820, 450);
+            whatDoing.setLocation(-720, -430);
+            whoYou.setLocation(-720, -470);
+            micheal.setLocation(-720, -470);
+            uhmMicheal.setLocation(-720, -470);
+            nonsense.setLocation(-720, -470);
+            dontWorry.setLocation(-820, -470);
+            forReal.setLocation(-720, -470);
+            if (RiyunIdx == 0) {
+                rButton.setLocation(-820, -450);
+                whatDoing.setLocation(720, 430);
+                whoYou.setLocation(720, 470);
+            }
+            if (RiyunIdx == 5) {
+                rButton.setLocation(-820, -450);
+                micheal.setLocation(720, 450);
+            }
+            if (RiyunIdx == 13) {
+                rButton.setLocation(-820, -450);
+                nonsense.setLocation(750, 430);
+                forReal.setLocation(750, 470);
+            }
             g.drawImage(Riyun, 300, 220, null);
             g.drawImage(playerStand, 500, 220, null);
             g.setColor(Color.CYAN);
             g.drawString(rDialogue, 100, 500);
+        }
+
+        if (player.playerRect().intersects(needle.VillagerRect()) && NeedleIdx < needleSpeaks.size() - 1 && riyunSpoke) {
+            g.drawImage(background, 0,0, null);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            nButton.setLocation(820, 450);
+            whatDoing.setLocation(-720, -430);
+            whoYou.setLocation(-720, -470);
+            uhmMicheal.setLocation(-720, -470);
+            dontWorry.setLocation(-720, -470);
+            forReal.setLocation(-720, -470);
+            if (NeedleIdx == 0) {
+                nButton.setLocation(-820, -450);
+                whatDoing.setLocation(720, 430);
+                whoYou.setLocation(720, 470);
+            }
+            if (NeedleIdx == 4) {
+                nButton.setLocation(-820, -450);
+                uhmMicheal.setLocation(670, 450);
+            }
+            if (NeedleIdx == 10) {
+                nButton.setLocation(-820, -450);
+                dontWorry.setLocation(720, 430);
+                forReal.setLocation(720, 470);
+            }
+            g.drawImage(Needle, 300, 220, null);
+            g.drawImage(playerStand, 500, 220, null);
+            g.setColor(Color.MAGENTA);
+            g.drawString(nDialogue, 100, 500);
+        }
+
+        if (needleSpoke && riyunSpoke && NeedleIdx == 14) {
+            michealSearch.setLocation(720, 500);
         }
 
         if (pressedKeys[65]) {
@@ -258,12 +367,90 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
 
     public void actionPerformed(ActionEvent e) {
         if (RiyunIdx < riyunSpeaks.size() - 1) {
-            if (e.getSource() instanceof JButton && e.getSource() == nButton) {
+            if (e.getSource() instanceof JButton && e.getSource() == whoYou) {
+                requestFocusInWindow();
+                RiyunIdx = 1;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && RiyunIdx == 1) {
+                requestFocusInWindow();
+                RiyunIdx = 3;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == whatDoing) {
+                requestFocusInWindow();
+                RiyunIdx = 2;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == nonsense) {
+                requestFocusInWindow();
+                RiyunIdx = 14;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && RiyunIdx == 14) {
+                requestFocusInWindow();
+                RiyunIdx = 16;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                riyunSpoke = true;
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == forReal) {
+                requestFocusInWindow();
+                RiyunIdx = 15;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == rButton || e.getSource() == micheal) {
                 requestFocusInWindow();
                 RiyunIdx++;
                 rDialogue = riyunSpeaks.get(RiyunIdx);
                 repaint();
+                if (RiyunIdx == 16) {
+                    riyunSpoke = true;
+                }
             }
+        }
+
+        if (NeedleIdx < needleSpeaks.size() - 1 && RiyunIdx == riyunSpeaks.size() - 1) {
+            if (e.getSource() instanceof JButton && e.getSource() == whoYou) {
+                requestFocusInWindow();
+                NeedleIdx = 1;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == whatDoing) {
+                requestFocusInWindow();
+                NeedleIdx = 2;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == dontWorry) {
+                requestFocusInWindow();
+                NeedleIdx = 11;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && NeedleIdx == 11) {
+                requestFocusInWindow();
+                NeedleIdx = 13;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                needleSpoke = true;
+                repaint();
+            } else if (e.getSource() instanceof JButton && e.getSource() == forReal) {
+                requestFocusInWindow();
+                NeedleIdx = 12;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                repaint();
+            } else if (e.getSource() instanceof JButton && (e.getSource() == nButton || e.getSource() == uhmMicheal)) {
+                requestFocusInWindow();
+                NeedleIdx++;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                repaint();
+                if (NeedleIdx == 14) {
+                    needleSpoke = true;
+                }
+            }
+        }
+        if (e.getSource() instanceof JButton && e.getSource() == michealSearch) {
+            sound.stop();
+            sound.close();
+            enclosingFrame.setVisible(false);
+            new SearchFrame();
         }
     }
 }

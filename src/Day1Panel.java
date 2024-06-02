@@ -306,8 +306,8 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
                         g.drawImage(emoHouse, 200, 300, null);
                         g.drawImage(preppyHouse, 400, 300, null);
                         button.setLocation(-400, -400);
-                        theEmoOne.setLocation(790, 430);
-                        thePinkOne.setLocation(790, 470);
+                        theEmoOne.setLocation(750, 430);
+                        thePinkOne.setLocation(750, 470);
                     }
                 }
                 if (mayorDay1Idx == 7) {

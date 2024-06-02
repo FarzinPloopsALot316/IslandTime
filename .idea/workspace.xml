@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="riyun added">
-      <change afterPath="$PROJECT_DIR$/src/Needle.png" afterDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="updating the grass animation panel">
+      <change afterPath="$PROJECT_DIR$/src/Day2MichealFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SearchFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/woods.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day2Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Night1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night1Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Villager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Villager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +370,55 @@
       <option name="project" value="LOCAL" />
       <updated>1717270849181</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="day 2 panel">
+      <option name="closed" value="true" />
+      <created>1717274014366</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1717274014366</updated>
+    </task>
+    <task id="LOCAL-00037" summary="day 2 panel">
+      <option name="closed" value="true" />
+      <created>1717275118884</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1717275118884</updated>
+    </task>
+    <task id="LOCAL-00038" summary="day 2 panel, scream audios">
+      <option name="closed" value="true" />
+      <created>1717281582879</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717281582880</updated>
+    </task>
+    <task id="LOCAL-00039" summary="day 2 panel, scream audios">
+      <option name="closed" value="true" />
+      <created>1717282282582</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1717282282582</updated>
+    </task>
+    <task id="LOCAL-00040" summary="updating the grass animation panel">
+      <option name="closed" value="true" />
+      <created>1717284479927</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717284479927</updated>
+    </task>
+    <task id="LOCAL-00041" summary="updating the grass animation panel">
+      <option name="closed" value="true" />
+      <created>1717293201687</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1717293201688</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -379,6 +434,9 @@
     <MESSAGE value="HELP ME" />
     <MESSAGE value="help how do i make the player move" />
     <MESSAGE value="riyun added" />
-    <option name="LAST_COMMIT_MESSAGE" value="riyun added" />
+    <MESSAGE value="day 2 panel" />
+    <MESSAGE value="day 2 panel, scream audios" />
+    <MESSAGE value="updating the grass animation panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating the grass animation panel" />
   </component>
 </project>

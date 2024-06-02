@@ -107,7 +107,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
 
     public void playSpooky () {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/spooky.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/Static.wav").getAbsoluteFile());
             sound = AudioSystem.getClip();
             sound.open(audioInputStream);
             sound.loop(Clip.LOOP_CONTINUOUSLY);

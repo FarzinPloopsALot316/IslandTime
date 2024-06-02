@@ -30,6 +30,7 @@ public class Day2Panel extends JPanel implements ActionListener {
     private BufferedImage Riyun;
     private BufferedImage Needle;
     private JButton button;
+    private JButton skip;
     private Clip sound;
 
     public Day2Panel (JFrame frame) {
@@ -123,6 +124,11 @@ public class Day2Panel extends JPanel implements ActionListener {
         button = new JButton("⟹");
         add(button);
         button.addActionListener(this);
+
+        skip = new JButton("Skip ⟹");
+        add(skip);
+        skip.addActionListener(this);
+
         dialogue = day2List.get(idx);
         playDay2Sound();
     }
@@ -209,24 +215,32 @@ public class Day2Panel extends JPanel implements ActionListener {
         } else {
             g.drawImage(mayorImg, 450,220, null);
         }
+        skip.setLocation(790, 50);
         button.setLocation(820, 450);
         g.drawImage(playerStand, 660,220, null);
         g.drawString(dialogue, 100, 500);
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (idx < day2List.size() -1) {
-            if (e.getSource() instanceof JButton) {
-                requestFocusInWindow();
-                idx++;
-                dialogue = day2List.get(idx);
-                repaint();
-            }
-        } else {
+        if (e.getSource() instanceof JButton && e.getSource() == skip) {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
             new Day2GrassFrame();
+        } else {
+            if (idx < day2List.size() -1) {
+                if (e.getSource() instanceof JButton && e.getSource() == button) {
+                    requestFocusInWindow();
+                    idx++;
+                    dialogue = day2List.get(idx);
+                    repaint();
+                }
+            } else {
+                sound.stop();
+                sound.close();
+                enclosingFrame.setVisible(false);
+                new Day2GrassFrame();
+            }
         }
     }
 
