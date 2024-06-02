@@ -27,7 +27,7 @@ public class Villager {
         return y;
     }
 
-    public void setXY (int coord) {
+    public void setY (int coord) {
         y = coord;
     }
 

@@ -111,7 +111,7 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
         }
 
         try {
-            grass = ImageIO.read(new File("src/grass.jpg"));
+            grass = ImageIO.read(new File("src/grass.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -392,6 +392,11 @@ public class Day1Panel extends JPanel implements ActionListener, Runnable {
             }
         }
     }
+
+    public static String getHouse () {
+        return house;
+    }
+
 
     public void run() {}
 }

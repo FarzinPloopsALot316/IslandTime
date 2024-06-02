@@ -9,7 +9,7 @@ public class Player {
     private String name;
     private String birthMonth;
     private int birthDate;
-    private final double MOVE_AMT = 0.2;
+    private final double MOVE_AMT = 0.4;
     private double xCoord;
     private double yCoord;
     private boolean facingRight;
@@ -20,7 +20,6 @@ public class Player {
     private BufferedImage playerLeft;
     private BufferedImage playerRight;
     private BufferedImage currentImage;
-    private BufferedImage playerHouse;
 
 
     public Player(String name, String birthMonth, int birthDate) {
@@ -56,19 +55,12 @@ public class Player {
         currentImage = playerStand;
     }
 
-    //moving and images
-
-
-    public void setPlayerHouse (String string) {
-        try {
-            playerHouse = ImageIO.read(new File(string));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+    public void setX (int x) {
+        xCoord = x;
     }
 
-    public BufferedImage getPlayerHouse () {
-        return playerHouse;
+    public void setY (int y) {
+        yCoord = y;
     }
 
     public int getHeight() {

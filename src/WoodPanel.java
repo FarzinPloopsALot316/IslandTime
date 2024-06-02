@@ -52,6 +52,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         woodCount = 0;
         pressedKeys = new boolean[128];
         addKeyListener(this);
+
         setFocusable(true);
         requestFocusInWindow();
         try {
@@ -73,7 +74,7 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         }
 
         try {
-            grassField = ImageIO.read(new File("src/grass.jpg"));
+            grassField = ImageIO.read(new File("src/grass.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -184,6 +185,8 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            player.setX(450);
+            player.setY(250);
             new Night1Frame();
         }
     }

@@ -226,14 +226,15 @@ public class Day2Panel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            new Day2GrassFrame();
         }
     }
 
-    public Villager getRiyun () {
+    public static Villager getRiyun () {
         return riyun;
     }
 
-    public Villager getNeedle () {
+    public static Villager getNeedle () {
         return needle;
     }
 }
