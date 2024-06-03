@@ -254,5 +254,6 @@ public class SearchPanel extends JPanel implements ActionListener {
                 cliffReq = false;
             }
         }
+        repaint();
     }
 }
