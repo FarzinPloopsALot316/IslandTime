@@ -5,6 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="almost done w day 2." />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="almost done w day 2.">
+      <change afterPath="$PROJECT_DIR$/src/Day3Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day3Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bedroomPink.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/emoBedroom.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2MichealPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,8 +69,8 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\fireplaylistongod" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\imagos" />
     </key>

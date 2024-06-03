@@ -52,6 +52,14 @@ public class Day2MichealPanel extends JPanel implements ActionListener {
         mayorList.add("I'm gonna be a bit busy tonight. I won't be here to talk for now.");
         mayorList.add("I'll see you tomorrow morning, though.");
         mayorList.add("See you later, hah haa!");
+
+        mayorList.add("For the night, you go to your house to sleep."); //22 red
+        mayorList.add("Suddenly, a pain sears across your head.");
+        mayorList.add("It spreads through your body, to every vein and bone.");
+        mayorList.add("Your legs burn with a pain, like a bone was broken.");
+        mayorList.add("You try to get up, and when you try to scream, nothing comes out.");
+        mayorList.add("You're tied down somewhere. You can't see anything.");
+        mayorList.add("And so you try to sleep the pain away.");
         dialogue = mayorList.get(idx);
 
         enclosingFrame = frame;
@@ -118,6 +126,18 @@ public class Day2MichealPanel extends JPanel implements ActionListener {
         }
     }
 
+    public void playScream () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/scream.wav").getAbsoluteFile());
+            sound = AudioSystem.getClip();
+            sound.open(audioInputStream);
+            sound.loop(Clip.LOOP_CONTINUOUSLY);
+            sound.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void paintComponent (Graphics g) {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,900,600);
@@ -160,7 +180,18 @@ public class Day2MichealPanel extends JPanel implements ActionListener {
             playDay2Sound();
         }
 
-        if (idx < 4 || idx == 8) {
+        if (idx == 22) {
+            sound.stop();
+            sound.close();
+            playScream();
+        }
+
+        if (idx >= 22) {
+            g.setColor(Color.BLACK);
+            g.fillRect(0,0,900,600);
+            button.setLocation(820,450);
+            g.setColor(Color.RED);
+        } else if (idx < 4 || idx == 8) {
             g.drawImage(playerStand, 500,220, null);
             g.drawImage(crazyImg, 250,220, null);
         } else {
@@ -198,6 +229,7 @@ public class Day2MichealPanel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            new Day3Frame();
         }
     }
 }
