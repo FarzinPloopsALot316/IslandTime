@@ -88,6 +88,7 @@ public class Day3Panel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            new Day3GrassFrame();
         }
     }
 }

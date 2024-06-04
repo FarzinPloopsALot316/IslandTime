@@ -26,7 +26,6 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
     private boolean riyunSpoke;
     private boolean needleSpoke;
 
-    private final double MOVE_AMT = 0.5;
     private JFrame enclosingFrame;
     private BufferedImage background;
     private BufferedImage playerStand;
@@ -54,6 +53,7 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
     private boolean[] pressedKeys;
     private ArrayList<String> riyunSpeaks;
     private ArrayList<String> needleSpeaks;
+
     public Day2GrassPanel (JFrame frame) {
         this.riyunSpoke = false;
         this.needleSpoke = false;
@@ -224,6 +224,7 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         } catch (IOException e) {
             System.out.println(e);
         }
+
         playDay2Sound();
     }
 

@@ -5,7 +5,7 @@ public class Day2GrassFrame implements Runnable {
     private Day2GrassPanel panel;
 
     public Day2GrassFrame () {
-        JFrame frame = new JFrame("Talk with the other villagers.");
+        JFrame frame = new JFrame("Day 2: Talk with the other villagers.");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(900, 600);
         frame.setLocationRelativeTo(null); // auto-centers frame in screen

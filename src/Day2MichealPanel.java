@@ -183,7 +183,7 @@ public class Day2MichealPanel extends JPanel implements ActionListener {
         if (idx == 22) {
             sound.stop();
             sound.close();
-            playScream();
+            playStatic();
         }
 
         if (idx >= 22) {
