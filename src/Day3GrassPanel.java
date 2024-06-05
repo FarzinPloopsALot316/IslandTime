@@ -51,6 +51,7 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
     private JButton rButton; //riyun's button
     private JButton nButton; //needle's button
     private JButton snButton; //stella and nancy's button
+    private JButton plazaButton;
 
     private boolean[] pressedKeys;
 
@@ -87,7 +88,8 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         riyunSpeaks.add("Also, I saw the two new villagers that arrived today.");
         riyunSpeaks.add("They're kinda odd, and one of them are rude, but I don't mind their attitude, " + riyun.getCatchphrase());
         riyunSpeaks.add("How about you go and catch up with em?");
-        riyunSpeaks.add("I think they'll fancy you, haha. " + riyun.getCatchphrase());
+        riyunSpeaks.add("I think they'll fancy you, haha. " + riyun.getCatchphrase()); //9
+        riyunSpeaks.add("Should not print.");
 
         this.needleSpeaks = new ArrayList<>();
 
@@ -99,24 +101,26 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         needleSpeaks.add("oh but am think they are together so");
         needleSpeaks.add("oh ya mayor will give big talk i need to find cloth" + needle.getCatchphrase());
         needleSpeaks.add("bye bye pookie" + needle.getCatchphrase());
+        needleSpeaks.add("Should not print.");
 
         this.StellaNanSpeaks = new ArrayList<>();
 
         StellaNanSpeaks.add("Stella: Uhm, whooo on earth are you, " + stella.getCatchphrase() + "??");
         StellaNanSpeaks.add("Stella: Okay well, can you like... leave us alone?");
         StellaNanSpeaks.add("Stella: You look so weird.");
-        StellaNanSpeaks.add("Nancy: Stella, let's just not..." + nancy.getCatchphrase() + ".");
+        StellaNanSpeaks.add("Nancy: Stella, let's just not..." + nancy.getCatchphrase() + "."); //3 yellow
         StellaNanSpeaks.add("Stella: Like ew, what's with that unnecessarily long hairstyle, " + stella.getCatchphrase() + ".");
         StellaNanSpeaks.add("Stella: And that dress is soo last generation.");
         StellaNanSpeaks.add("Stella: What are you, some kind of momma's girl?");
         StellaNanSpeaks.add("Stella: Your mom's probably dead anyways " + stella.getCatchphrase() + ".");
-        StellaNanSpeaks.add("Nancy: Stella come on now, they haven't even said anythin', " + nancy.getCatchphrase() + ".");
+        StellaNanSpeaks.add("Nancy: Stella come on now, they haven't even said anythin', " + nancy.getCatchphrase() + "."); //8 yellow
         StellaNanSpeaks.add("Stella: Ugh she just looks like a wh*re."); //sooo family friendly
         StellaNanSpeaks.add("Stella: Whatever. I just hate people. I'm sorry Nancyboo, " + stella.getCatchphrase() + ".");
-        StellaNanSpeaks.add("Nancy: Come, let's get ready for the town speech.");
+        StellaNanSpeaks.add("Nancy: Come, let's get ready for the town speech."); //11 yellow
         StellaNanSpeaks.add("Stella: Alrighty boo.");
         StellaNanSpeaks.add("Stella: And you, mayor's long haired slut.");
         StellaNanSpeaks.add("Stella: Keep away from me and Nancy. We don't hang out with weirdos, " + stella.getCatchphrase() + ".");
+        StellaNanSpeaks.add("Should not print.");
 
         this.rDialogue = riyunSpeaks.get(RiyunIdx);
         this.nDialogue = needleSpeaks.get(NeedleIdx);
@@ -133,6 +137,10 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         snButton = new JButton("⟹");
         add(snButton);
         snButton.addActionListener(this);
+
+        plazaButton = new JButton("Go to Town Plaza");
+        add(plazaButton);
+        plazaButton.addActionListener(this);
 
         pressedKeys = new boolean[128];
         addKeyListener(this);
@@ -223,7 +231,8 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         } catch (IOException e) {
             System.out.println(e);
         }
-
+        player.setX(325);
+        player.setY(0);
         playDay3Sound();
     }
 
@@ -244,6 +253,7 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         rButton.setLocation(-820, -450);
         nButton.setLocation(-840, -450);
         snButton.setLocation(-840, -450);
+        plazaButton.setLocation(-350, -500);
 
         riyun.setX(120);
         riyun.setY(150);
@@ -270,6 +280,48 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         g.drawImage(Nancy, nancy.getX(), nancy.getY(), null);
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
 
+        if (player.playerRect().intersects(riyun.VillagerRect()) && RiyunIdx < riyunSpeaks.size() - 1) { //riyun's conversation
+            g.drawImage(background, 0,0, null);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            rButton.setLocation(820, 450);
+            g.setColor(Color.CYAN);
+            g.drawImage(Riyun, 300, 220, null);
+            g.drawImage(playerStand, 500, 220, null);
+            g.drawString(rDialogue, 100, 500);
+        }
+
+        if (player.playerRect().intersects(needle.VillagerRect()) && NeedleIdx < needleSpeaks.size() - 1 && riyunSpoke) {
+            g.drawImage(background, 0,0, null);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            nButton.setLocation(820, 450);
+            g.setColor(Color.MAGENTA);
+            g.drawImage(Needle, 300, 220, null);
+            g.drawImage(playerStand, 500, 220, null);
+            g.drawString(nDialogue, 100, 500);
+        }
+
+        if ((player.playerRect().intersects(stella.VillagerRect()) || player.playerRect().intersects(nancy.VillagerRect())) && StellaNanIdx < StellaNanSpeaks.size() - 1 && needleSpoke) {
+            //yellow: 3, 8, 11
+            g.drawImage(background, 0, 0, null);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            snButton.setLocation(820, 450);
+            g.setColor(Color.PINK);
+            if (StellaNanIdx == 3 || StellaNanIdx == 8 || StellaNanIdx == 11) {
+                g.setColor(Color.YELLOW);
+            }
+            g.drawImage(Nancy, 200, 220, null);
+            g.drawImage(Stella, 300, 220, null);
+            g.drawImage(playerStand, 600, 220, null);
+            g.drawString(snDialogue, 100, 500);
+        }
+
+        if (riyunSpoke && needleSpoke && stellaNanSpoke && StellaNanIdx == StellaNanSpeaks.size() - 1) {
+            plazaButton.setLocation(350, 500);
+        }
+
         if (pressedKeys[65]) {
             player.moveLeft();
             g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
@@ -294,6 +346,46 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
     }
 
     public void actionPerformed (ActionEvent e) {
+        if (RiyunIdx < riyunSpeaks.size() - 1) {
+            if (e.getSource() instanceof JButton && e.getSource() == rButton) {
+                requestFocusInWindow();
+                RiyunIdx++;
+                rDialogue = riyunSpeaks.get(RiyunIdx);
+                if (RiyunIdx == 9) {
+                    riyunSpoke = true;
+                }
+            }
+        }
+
+        if (NeedleIdx < needleSpeaks.size() - 1 && RiyunIdx == riyunSpeaks.size() - 1) {
+            if (e.getSource() instanceof JButton && e.getSource() == nButton) {
+                requestFocusInWindow();
+                NeedleIdx++;
+                nDialogue = needleSpeaks.get(NeedleIdx);
+                if (NeedleIdx == 7) {
+                    needleSpoke = true;
+                }
+            }
+        }
+
+        if (StellaNanIdx < StellaNanSpeaks.size() - 1 && RiyunIdx == riyunSpeaks.size() - 1 && NeedleIdx == needleSpeaks.size() - 1) {
+            if (e.getSource() instanceof JButton && e.getSource() == snButton) {
+                requestFocusInWindow();
+                StellaNanIdx++;
+                snDialogue = StellaNanSpeaks.get(StellaNanIdx);
+                if (StellaNanIdx == 14) {
+                    stellaNanSpoke = true;
+                }
+            }
+        }
+
+        if (e.getSource() instanceof JButton && e.getSource() == plazaButton) {
+            requestFocusInWindow();
+            sound.stop();
+            sound.close();
+            enclosingFrame.setVisible(false);
+            new Day3PlazaFrame();
+        }
         repaint();
     }
 

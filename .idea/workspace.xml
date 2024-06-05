@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="almost done w day 2.">
-      <change afterPath="$PROJECT_DIR$/src/Day3GrassFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day3GrassPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Nancy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NancyHouse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stella.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StellaHouse.png" afterDir="false" />
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="working on day 3, added Nancy and Stella">
+      <change afterPath="$PROJECT_DIR$/src/Day3PlazaFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day3PlazaPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plaza.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2GrassFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2MichealPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day3Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/day3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day3Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day3GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3GrassPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717451409702</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="working on day 3, added Nancy and Stella">
+      <option name="closed" value="true" />
+      <created>1717527876787</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1717527876787</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -478,6 +480,7 @@
     <MESSAGE value="day 2 panel, scream audios" />
     <MESSAGE value="updating the grass animation panel" />
     <MESSAGE value="almost done w day 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="almost done w day 2." />
+    <MESSAGE value="working on day 3, added Nancy and Stella" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on day 3, added Nancy and Stella" />
   </component>
 </project>
