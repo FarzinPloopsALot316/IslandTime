@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="working on day 3, added Nancy and Stella">
-      <change afterPath="$PROJECT_DIR$/src/Day3PlazaFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day3PlazaPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/plaza.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day3Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day3GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3GrassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day3PlazaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3PlazaPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

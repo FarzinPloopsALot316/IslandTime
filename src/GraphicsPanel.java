@@ -118,6 +118,7 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
         decline.setLocation(-400, 300);
         g.drawImage(background, 0, 0, null);
         g.drawImage(mayorImg, 375, 275, null);
+        g.setColor(Color.BLACK);
         g.fillRect(0, 400, 900, 200);
         g.setColor(Color.white);
         button.setLocation(820, 450);

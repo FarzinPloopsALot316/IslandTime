@@ -15,6 +15,7 @@ import javax.sound.sampled.Clip;
 
 public class Day3PlazaPanel extends JPanel implements ActionListener {
     private Player player;
+    private String words;
     private ArrayList<String> speech;
     private int speechIdx;
     private String dialogue;
@@ -29,8 +30,9 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
     private BufferedImage Stella;
     private BufferedImage Nancy;
     private BufferedImage mayorStand;
+    private BufferedImage crazyImg;
 
-    private TextField message;
+    private JTextField message;
 
     private JButton button;
 
@@ -47,14 +49,14 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         speech.add("For today, we commemorate the start of growth, the procedure of progress, and the humble beginnings of a new community.");
         speech.add("That's right people, hah haa!");
         speech.add("Today is the official grand opening of our town, " + town.getName() + "!");
-        speech.add("There was a scattered applause, and a cheer from Needle. Micheal smiles.");
+        speech.add("There was a scattered applause, and a cheer from Needle. Micheal smiles."); //5
         speech.add("He looks around, his smile wide and bright.");
         speech.add("He was definately much more happier and more collected than he was yesterday.");
         speech.add("His eyes sparkled a radiant blue under the sun.");
         speech.add("Yet..");
         speech.add("Things still felt off-putting.");
         speech.add("He spotted you, waving at you from the dirt perch.");
-        speech.add("You nod politely, waving back as he continued his speech.");
+        speech.add("You nod politely, waving back as he continued his speech."); //12
         speech.add("Since a child, I've dreamed beyond possibilities, beyond my range of reach, hah haa.");
         speech.add("Always seeking to empower, to be the proud leader of something successful, something extraordinary.");
         speech.add("But, you know what, hah haa?");
@@ -66,15 +68,27 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         speech.add("And I promise, I'll make it all happen on this very tropical island.");
         speech.add("For you, for me, and for the new future we look forward too.");
         speech.add("And especially..");
-        speech.add("He looks directly at you. The whole town faces you.");
+        speech.add("He looks directly at you. The whole town faces you."); //24
         speech.add("For you, " + player.getName() + ".");
         speech.add("Hah haa! Why don't you come up here and share a word! We'd love to hear from you, hah haa.");
-        speech.add("You nod, walking up to the perch.");
+        speech.add("You nod, walking up to the perch."); //27
         speech.add("Say something! Cmon, you gotta share something with your fellow neighbors, hah haa!");
         speech.add("After all, this was only possible because of your choices!");
         speech.add("placeholder");
-        speech.add("People cheer and applaud. Riyun smiles. Needle waves his arms like a maniac, and Nancy nods. Stella rolls her eyes.");
-        speech.add("Should not print.");
+        speech.add("People cheer and applaud. Riyun smiles. Needle waves his arms like a maniac, and Nancy nods. Stella rolls her eyes."); //31
+        speech.add("Suddenly, your head starts to spin.");//32
+        speech.add("Everything feels dizzy. You feel like throwing up.");
+        speech.add("Micheal places a hand on your shoulder, whispering into your ear."); //34
+        speech.add("What's wrong? Feeling sick?");
+        speech.add("You surely didn't feel that way before, hah haa!");
+        speech.add("He has a sinister smile, patting your shoulder."); //37
+        speech.add("Are you thinking of screaming for help?");
+        speech.add("They won't help you.");
+        speech.add("They can't do sh*it for you, hah haa!");
+        speech.add("Why don't you go take a seat? You should clear your head.");
+        speech.add("His hand squeezes your shoulder extremely tightly. You feel like it's going to snap off."); //42
+        speech.add("Don't want you getting sick to early.");
+        speech.add("Go on. Quietly now.");
 
         dialogue = speech.get(speechIdx);
 
@@ -84,6 +98,10 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         add(button);
         button.addActionListener(this);
 
+        message = new JTextField(40);
+        add(message);
+        message.addActionListener(this);
+
         try {
             playerStand = ImageIO.read(new File("src/PlayerStand.png"));
         } catch (IOException e) {
@@ -92,6 +110,11 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
 
         try {
             mayorStand = ImageIO.read(new File("src/MichealStand.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            mayorStand = ImageIO.read(new File("src/MichealCrazy.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -140,25 +163,82 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         }
     }
 
+    public void playSpooky () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/spooky.wav").getAbsoluteFile());
+            sound = AudioSystem.getClip();
+            sound.open(audioInputStream);
+            sound.loop(Clip.LOOP_CONTINUOUSLY);
+            sound.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void paintComponent (Graphics g) {
-        g.drawImage(background, 0,-100, null);
-        button.setLocation(820, 450);
-        g.drawImage(mayorStand, 362, 50, null);
-        g.drawImage(playerStand, 362, 220, null);
-        g.drawImage(Riyun, 480, 220, null);
-        g.drawImage(Needle, 725, 220, null);
-        g.drawImage(Stella, 50, 220, null);
-        g.drawImage(Nancy, 150, 220, null);
-        g.drawImage(playerStand, 362, 220, null);
+        if (speechIdx < 35) {
+            g.drawImage(background, 0,-100, null);
+            button.setLocation(820, 450);
+            message.setLocation(-320, -400);
+            g.drawImage(mayorStand, 362, 50, null);
+            g.drawImage(playerStand, 362, 220, null);
+            g.drawImage(Riyun, 480, 220, null);
+            g.drawImage(Needle, 725, 220, null);
+            g.drawImage(Stella, 50, 220, null);
+            g.drawImage(Nancy, 150, 220, null);
+            if (speechIdx >= 28) {
+                g.drawImage(playerStand, 500, 50, null);
+            } else {
+                g.drawImage(playerStand, 362, 220, null);
+            }
+        } else {
+            if (speechIdx < 35) {
+                g.drawImage(mayorStand, 300, 50, null);
+            } else {
+                g.drawImage(crazyImg, 300, 50, null);
+            }
+            g.setColor(Color.BLACK);
+            g.fillRect(0,0, 900, 600);
+            button.setLocation(820, 450);
+            message.setLocation(-320, -400);
+            g.drawImage(playerStand, 500, 50, null);
+        }
+
+        if (speechIdx == 35) {
+            sound.stop();
+            sound.close();
+            playSpooky();
+        }
+
         g.setColor(Color.BLACK);
         g.fillRect(0, 400, 900, 200);
         g.setColor(Color.WHITE);
+        if ((speechIdx >= 5 && speechIdx <= 12) || (speechIdx == 24) || (speechIdx == 27) || (speechIdx == 31)) {
+            g.setColor(Color.GREEN);
+        }
+
+        if ((speechIdx >= 32 && speechIdx <= 34) || speechIdx == 37 || speechIdx == 42) {
+            g.setColor(Color.RED);
+        }
+        if (speechIdx == 29) {
+            message.setLocation(280, 400);
+        }
+        if (speechIdx == 30) {
+            g.setColor(Color.GREEN);
+            message.setLocation(-320, -400);
+            dialogue = words;
+        }
         g.drawString(dialogue, 100, 500);
     }
 
     public void actionPerformed(ActionEvent e) {
         if (speechIdx < speech.size() - 1) {
-            if (e.getSource() instanceof JButton) {
+            if (e.getSource() instanceof JButton && speechIdx == 29) {
+                requestFocusInWindow();
+                words = message.getText();
+                speechIdx++;
+                dialogue = speech.get(speechIdx);
+            } else if (e.getSource() instanceof JButton) {
                 requestFocusInWindow();
                 speechIdx++;
                 dialogue = speech.get(speechIdx);

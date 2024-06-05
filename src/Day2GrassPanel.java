@@ -268,6 +268,7 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
 
         if (player.playerRect().intersects(riyun.VillagerRect()) && RiyunIdx < riyunSpeaks.size() - 1) {//riyun's conversation
             g.drawImage(background, 0,0, null);
+            g.setColor(Color.BLACK);
             g.fillRect(0, 400, 900, 200);
             rButton.setLocation(820, 450);
             whatDoing.setLocation(-720, -430);
