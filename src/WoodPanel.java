@@ -23,7 +23,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
     private BufferedImage playerLeft;
     private BufferedImage wood;
     private BufferedImage grassField;
-    private BufferedImage basement;
     private boolean[] pressedKeys;
     private int woodCount;
     private int woodHeight;
@@ -85,11 +84,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
             System.out.println(e.getMessage());
         }
 
-        try {
-            basement = ImageIO.read(new File("src/basement.jpg"));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
         playIntro();
     }
 
@@ -121,9 +115,9 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         button.setLocation(-820, -450);
         g.drawImage(grassField, 0, 0, null);
-        g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
+        g.drawImage(playerStand, (int) player.getXCoord(), (int) player.getYCoord(), null);
         for (int i = 0; i < logs.size(); i++) {
-            g.drawImage(wood, logs.get(i).getX(), logs.get(i).getY(), logs.get(i).getWidthAndHeight(), logs.get(i).getWidthAndHeight(),null);
+            g.drawImage(wood, logs.get(i).getX(), logs.get(i).getY(), null);
             if (player.playerRect().intersects(logs.get(i).woodRect())) {
                 woodCount++;
                 logs.remove(i);
@@ -133,13 +127,12 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
 
         if (woodCount == 5) {
             g.fillRect(0, 0, 900, 600);
-            g.drawImage(basement, 0, 0, null);
             sound.stop();
             sound.close();
             playSpooky();
             g.setColor(Color.BLACK);
             g.fillRect(0, 400, 900, 200);
-            g.setColor(Color.RED);
+            g.setColor(Color.WHITE);
             g.drawString("Go back to sleep... I'm, not done with you, hah haa...", 100, 500);
             button.setLocation(820, 450);
         }
@@ -189,5 +182,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
             player.setY(250);
             new Night1Frame();
         }
+        repaint();
     }
 }

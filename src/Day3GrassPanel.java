@@ -35,8 +35,6 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
 
     private BufferedImage background;
     private BufferedImage playerStand;
-    private BufferedImage playerRight;
-    private BufferedImage playerLeft;
     private BufferedImage Riyun;
     private BufferedImage Needle;
     private BufferedImage Stella;
@@ -150,18 +148,6 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
 
         try {
             playerStand = ImageIO.read(new File("src/PlayerStand.png"));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            playerLeft = ImageIO.read(new File("src/PlayerLeft.png"));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            playerRight = ImageIO.read(new File("src/PlayerRight.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

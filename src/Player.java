@@ -72,14 +72,14 @@ public class Player {
     }
 
     public void moveLeft() {
-        if (xCoord - MOVE_AMT >= 0) {
+        if (xCoord - MOVE_AMT >= -1) {
             xCoord -= MOVE_AMT;
             currentImage = playerLeft;
         }
     }
 
     public void moveRight() {
-        if (xCoord + MOVE_AMT <= 725) {
+        if (xCoord + MOVE_AMT <= 726) {
             xCoord += MOVE_AMT;
             currentImage = playerRight;
         }

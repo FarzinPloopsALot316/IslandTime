@@ -104,9 +104,9 @@ public class Night3Panel extends JPanel implements ActionListener {
             g.setColor(Color.BLACK);
             g.fillRect(0,0,900,600);
             g.drawImage(background, 0,-60,null);
-            g.drawImage(playerStand, 150, 389, null);
-            g.drawImage(Riyun, 50, 389, null);
-            g.drawImage(weirdo, 700, 389, null);
+            g.drawImage(playerStand, 125, 389, null);
+            g.drawImage(Riyun, 25, 389, null);
+            g.drawImage(weirdo, 650, 389, null);
             button.setLocation(820, 450);
         } else {
             g.setColor(Color.BLACK);
@@ -122,10 +122,17 @@ public class Night3Panel extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() instanceof JButton) {
-            requestFocusInWindow();
-            idx++;
-            dialogue = strings.get(idx);
+        if (idx < strings.size() - 1) {
+            if (e.getSource() instanceof JButton) {
+                requestFocusInWindow();
+                idx++;
+                dialogue = strings.get(idx);
+            }
+        } else {
+            sound.stop();
+            sound.close();
+            enclosingFrame.setVisible(false);
+            new BasementFrame();
         }
         repaint();
     }

@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="working on day 3, plaza speech">
-      <change afterPath="$PROJECT_DIR$/src/GRRR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Night3Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Night3Panel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lostPlayer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nightWoods.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BasementFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BasementPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/basement1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/basement2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/basement3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/clank.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leverDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leverUp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2MichealPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day3GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3GrassPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day3PlazaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3PlazaPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Night1Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night1Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Night3Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night3Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WoodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

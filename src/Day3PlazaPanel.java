@@ -252,6 +252,7 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
+            new Night3Frame();
         }
         repaint();
     }
