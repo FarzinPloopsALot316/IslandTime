@@ -47,7 +47,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
         played = false;
         leverCount = 0;
         enclosingFrame = frame;
-        player = new Player("PLEASE MAKE SURE YOU CHANGE THIS LATER", "may", 17); //change later pls
+        player = GraphicsPanel.getPlayer(); //change later pls
         player.setX(361);
         player.setY(389);
         up1 = true;
