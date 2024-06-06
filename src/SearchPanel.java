@@ -29,12 +29,14 @@ public class SearchPanel extends JPanel implements ActionListener {
     private BufferedImage woods;
     private BufferedImage cliff;
     private BufferedImage player;
+    private BufferedImage ew;
     private JButton bButton;
     private JButton wButton;
     private JButton cButton;
     private JButton beachArea;
     private JButton woodsArea;
     private JButton cliffArea;
+    private JButton eerie;
     private ArrayList<String> beachSearch;
     private ArrayList<String> woodsSearch;
     private ArrayList<String> cliffSearch;
@@ -73,6 +75,10 @@ public class SearchPanel extends JPanel implements ActionListener {
         cliffArea = new JButton("Search the cliff?");
         add(cliffArea);
         cliffArea.addActionListener(this);
+
+        eerie = new JButton("\"Look I'm sorry, we tried everything we could. We can't find your daughter.\"");
+        add(eerie);
+        eerie.addActionListener(this);
 
         beachSearch = new ArrayList<>();
         woodsSearch = new ArrayList<>();
@@ -123,7 +129,13 @@ public class SearchPanel extends JPanel implements ActionListener {
         try {
             player = ImageIO.read(new File("src/PlayerStand.png"));
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e);
+        }
+
+        try {
+            ew = ImageIO.read(new File("src/GRRR.png"));
+        } catch (IOException e) {
+            System.out.println(e);
         }
 
         playDay2Sound();
@@ -154,61 +166,79 @@ public class SearchPanel extends JPanel implements ActionListener {
     }
 
     public void paintComponent (Graphics g) {
-        g.drawImage(grass, 0, 0, null);
-        g.drawImage(player, 345, 389, null);
-        bButton.setLocation(-820, -450);
-        wButton.setLocation(-820, -450);
-        cButton.setLocation(-820, -450);
-        beachArea.setLocation(320, 100);
-        woodsArea.setLocation(330, 200);
-        cliffArea.setLocation(360, 300);
-        if (beachReq) {
-            bButton.setLocation(820, 450);
-            wButton.setLocation(-820, -450);
-            cButton.setLocation(-820, -450);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, 900, 600);
-            g.drawImage(beach, 45, 0, null);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 400, 900, 200);
-            beachArea.setLocation(-820, -400);
-            woodsArea.setLocation(-820, -400);
-            cliffArea.setLocation(-820, -400);
-            g.setColor(Color.green);
-            g.drawString(beachDialogue, 100, 500);
-        }
-        if (woodsReq) {
-            bButton.setLocation(-820, -450);
-            wButton.setLocation(820, 450);
-            cButton.setLocation(-820, -450);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, 900, 600);
-            g.drawImage(woods, 0, 0, null);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 400, 900, 200);
-            beachArea.setLocation(-820, -400);
-            woodsArea.setLocation(-820, -400);
-            cliffArea.setLocation(-820, -400);
-            g.setColor(Color.green);
-            g.drawString(woodsDialogue, 100, 500);
-        }
-        if (cliffReq) {
+        if (searches < 3) {
+            g.drawImage(grass, 0, 0, null);
+            g.drawImage(player, 345, 389, null);
             bButton.setLocation(-820, -450);
             wButton.setLocation(-820, -450);
-            cButton.setLocation(820, 450);
+            cButton.setLocation(-820, -450);
+            eerie.setLocation(-320, -290);
+            beachArea.setLocation(320, 100);
+            woodsArea.setLocation(330, 200);
+            cliffArea.setLocation(360, 300);
+            if (beachReq) {
+                bButton.setLocation(820, 450);
+                wButton.setLocation(-820, -450);
+                cButton.setLocation(-820, -450);
+                eerie.setLocation(-320, -290);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 0, 900, 600);
+                g.drawImage(beach, 45, 0, null);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 400, 900, 200);
+                beachArea.setLocation(-820, -400);
+                woodsArea.setLocation(-820, -400);
+                cliffArea.setLocation(-820, -400);
+                g.setColor(Color.green);
+                g.drawString(beachDialogue, 100, 500);
+            }
+            if (woodsReq) {
+                bButton.setLocation(-820, -450);
+                wButton.setLocation(820, 450);
+                cButton.setLocation(-820, -450);
+                eerie.setLocation(-320, -290);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 0, 900, 600);
+                g.drawImage(woods, 0, 0, null);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 400, 900, 200);
+                beachArea.setLocation(-820, -400);
+                woodsArea.setLocation(-820, -400);
+                cliffArea.setLocation(-820, -400);
+                g.setColor(Color.green);
+                g.drawString(woodsDialogue, 100, 500);
+            }
+            if (cliffReq) {
+                bButton.setLocation(-820, -450);
+                wButton.setLocation(-820, -450);
+                cButton.setLocation(820, 450);
+                eerie.setLocation(-320, -290);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 0, 900, 600);
+                g.drawImage(cliff, 0, 0, null);
+                g.drawImage(ew, 500, 125, null);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 400, 900, 200);
+                beachArea.setLocation(-820, -400);
+                woodsArea.setLocation(-820, -400);
+                cliffArea.setLocation(-820, -400);
+                g.setColor(Color.green);
+                g.drawString(cliffDialogue, 100, 500);
+            }
+        } else {
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, 900, 600);
-            g.drawImage(cliff, 0, 0, null);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 400, 900, 200);
-            beachArea.setLocation(-820, -400);
-            woodsArea.setLocation(-820, -400);
-            cliffArea.setLocation(-820, -400);
-            g.setColor(Color.green);
-            g.drawString(cliffDialogue, 100, 500);
+            g.fillRect(0,0,900,600);
+            g.drawImage(player, 345, 389, null);
+            bButton.setLocation(-820, -450);
+            wButton.setLocation(-820, -450);
+            cButton.setLocation(-820, -450);
+            beachArea.setLocation(-320, -100);
+            woodsArea.setLocation(-330, -200);
+            cliffArea.setLocation(-360, -300);
+            eerie.setLocation(180, 290);
         }
 
-        if (searches == 3) {
+        if (searches == 4) {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
@@ -225,6 +255,11 @@ public class SearchPanel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             playStatic();
+            try {
+                player = ImageIO.read(new File("src/lostPlayer.png"));
+            } catch (IOException exception) {
+                System.out.println(exception.getMessage());
+            }
             cliffReq = true;
         } else if (e.getSource() instanceof JButton && e.getSource() == bButton && beachIdx < beachSearch.size() - 1) {
             requestFocusInWindow();
@@ -253,6 +288,9 @@ public class SearchPanel extends JPanel implements ActionListener {
                 searches++;
                 cliffReq = false;
             }
+        } else if (e.getSource() instanceof JButton && e.getSource() == eerie) {
+            requestFocusInWindow();
+            searches++;
         }
         repaint();
     }

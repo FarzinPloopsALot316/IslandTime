@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="working on day 3, added Nancy and Stella">
+    <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="working on day 3, plaza speech">
+      <change afterPath="$PROJECT_DIR$/src/GRRR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Night3Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Night3Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lostPlayer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nightWoods.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2MichealPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2MichealPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day3PlazaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day3PlazaPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Night1Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night1Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,6 +486,7 @@
     <MESSAGE value="updating the grass animation panel" />
     <MESSAGE value="almost done w day 2." />
     <MESSAGE value="working on day 3, added Nancy and Stella" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on day 3, added Nancy and Stella" />
+    <MESSAGE value="working on day 3, plaza speech" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on day 3, plaza speech" />
   </component>
 </project>

@@ -84,11 +84,14 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         speech.add("He has a sinister smile, patting your shoulder."); //37
         speech.add("Are you thinking of screaming for help?");
         speech.add("They won't help you.");
-        speech.add("They can't do sh*it for you, hah haa!");
+        speech.add("They can't do sh*t for you, hah haa!");
         speech.add("Why don't you go take a seat? You should clear your head.");
         speech.add("His hand squeezes your shoulder extremely tightly. You feel like it's going to snap off."); //42
-        speech.add("Don't want you getting sick to early.");
+        speech.add("Don't want you getting sick too early, hah haa.");
         speech.add("Go on. Quietly now.");
+        speech.add("Anyway, thank you everybody, hah haa! That's all for today."); //45
+        speech.add("I'll be busy with some work, but I'll get to anybody later today or sometime soon!");
+        speech.add("I'll see you all later, hah haa!");
 
         dialogue = speech.get(speechIdx);
 
@@ -114,7 +117,7 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
             System.out.println(e.getMessage());
         }
         try {
-            mayorStand = ImageIO.read(new File("src/MichealCrazy.png"));
+            crazyImg = ImageIO.read(new File("src/MichealCrazy.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -176,38 +179,39 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
     }
 
     public void paintComponent (Graphics g) {
-        if (speechIdx < 35) {
+        if (speechIdx < 35 || speechIdx >= 45) {
             g.drawImage(background, 0,-100, null);
             button.setLocation(820, 450);
             message.setLocation(-320, -400);
             g.drawImage(mayorStand, 362, 50, null);
-            g.drawImage(playerStand, 362, 220, null);
             g.drawImage(Riyun, 480, 220, null);
             g.drawImage(Needle, 725, 220, null);
             g.drawImage(Stella, 50, 220, null);
             g.drawImage(Nancy, 150, 220, null);
-            if (speechIdx >= 28) {
+            if (speechIdx >= 28 && speechIdx < 45) {
                 g.drawImage(playerStand, 500, 50, null);
             } else {
                 g.drawImage(playerStand, 362, 220, null);
             }
         } else {
-            if (speechIdx < 35) {
-                g.drawImage(mayorStand, 300, 50, null);
-            } else {
-                g.drawImage(crazyImg, 300, 50, null);
-            }
             g.setColor(Color.BLACK);
             g.fillRect(0,0, 900, 600);
+            g.drawImage(crazyImg, 400, 50, null);
+            g.drawImage(playerStand, 500, 50, null);
             button.setLocation(820, 450);
             message.setLocation(-320, -400);
-            g.drawImage(playerStand, 500, 50, null);
         }
 
         if (speechIdx == 35) {
             sound.stop();
             sound.close();
             playSpooky();
+        }
+
+        if (speechIdx == 45) {
+            sound.stop();
+            sound.close();
+            playDay3Sound();
         }
 
         g.setColor(Color.BLACK);
