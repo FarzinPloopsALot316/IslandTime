@@ -26,6 +26,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
     private boolean up2;
     private boolean up3;
     private boolean up4;
+    private boolean played;
 
     private JFrame enclosingFrame;
 
@@ -33,15 +34,20 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
     private BufferedImage playerStand;
     private BufferedImage leverUp;
     private BufferedImage leverDown;
+    private BufferedImage door;
+    private BufferedImage lady;
 
     private Clip clank;
     private Clip sound;
+    private Clip boo;
 
     private boolean[] pressedKeys;
 
     public BasementPanel (JFrame frame) {
+        played = false;
+        leverCount = 0;
         enclosingFrame = frame;
-        player = new Player("AAASJWKQSXDW", "may", 17);
+        player = new Player("PLEASE MAKE SURE YOU CHANGE THIS LATER", "may", 17); //change later pls
         player.setX(361);
         player.setY(389);
         up1 = true;
@@ -89,12 +95,25 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             System.out.println(e);
         }
 
+        try {
+            door = ImageIO.read(new File("src/closed.png"));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        try {
+            lady = ImageIO.read(new File("src/lostPlayer.png"));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
         pressedKeys = new boolean[128];
         addKeyListener(this);
 
         playSpooky();
         setFocusable(true);
         requestFocusInWindow();
+        playBoo();
     }
 
     public void playSpooky () {
@@ -115,6 +134,17 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             clank = AudioSystem.getClip();
             clank.open(audioInputStream);
             clank.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void playBoo () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/boo.wav").getAbsoluteFile());
+            boo = AudioSystem.getClip();
+            boo.open(audioInputStream);
+            boo.start();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -214,6 +244,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             if (player.playerRect().intersects(levers.get(0).leverRect()) && up1) {
                 levers.get(0).switchDown();
                 playSwitch();
+                leverCount++;
                 up1 = false;
             }
         } else if (roomLeft2) {
@@ -221,6 +252,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             if (player.playerRect().intersects(levers.get(1).leverRect()) && up2) {
                 levers.get(1).switchDown();
                 playSwitch();
+                leverCount++;
                 up2 = false;
             }
         } else if (roomRight) {
@@ -228,6 +260,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             if (player.playerRect().intersects(levers.get(2).leverRect()) && up3) {
                 levers.get(2).switchDown();
                 playSwitch();
+                leverCount++;
                 up3 = false;
             }
         } else if (roomRight2) {
@@ -235,8 +268,25 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             if (player.playerRect().intersects(levers.get(3).leverRect()) && up4) {
                 levers.get(3).switchDown();
                 playSwitch();
+                leverCount++;
                 up4 = false;
             }
+        }
+
+        if (leverCount < 4 && roomStart) {
+            g.drawImage(door, 290, 55, null);
+        } else if (leverCount == 4 && roomStart) {
+            try {
+                door = ImageIO.read(new File("src/open.png"));
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+            if (!played) {
+                playBoo();
+            }
+            g.drawImage(door, 290, 55, null);
+            g.drawImage(lady, 200, 200, null);
+            played = true;
         }
 
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
