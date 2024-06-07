@@ -56,6 +56,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         letter1.add("She can't refuse me. I'll force her to be my friend, I'll beat it into her if I must.");
         letter1.add("She's going to be a perfect best friend.");
         letter1.add("I'm going to show Mom that I can have a human best friend.'");
+        idx1 = 0;
 
         letter2 = new ArrayList<>();
         letter2.add("December 13, 2120");
@@ -66,6 +67,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         letter2.add("She's going to be an amazing friend.");
         letter2.add("I know it.");
         letter2.add("And when I ask her out, I know she won't refuse.");
+        idx2 = 0;
 
         letter3 = new ArrayList<>();
         letter3.add("February 14, 2121");
@@ -81,6 +83,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         letter3.add("I'll make her have hallucinations, and those hallucinations will have ME in it.");
         letter3.add("ME! I AM THE ONLY PERSON SHE SHOULD LOVE FOR, SHOULD CARE FOR, AND SHOULD PONDER FOR!");
         letter3.add("She'll regret her words. And if she f*cking doesn't, I'll make her regret them.");
+        idx3 = 0;
 
         letter4 = new ArrayList<>();
         letter4.add("February 21, 2121");
@@ -93,6 +96,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         letter4.add("She passes out so much. I must have hti something important pretty hard.");
         letter4.add("I'm not gonna take her to the hospital. I'll just keep giving her amnesia everytime she wakes up screaming in pain.");
         letter4.add("She's my best friend now.");
+        idx4 = 0;
 
         try {
             playerStand = ImageIO.read(new File("src/PlayerStand.png"));
