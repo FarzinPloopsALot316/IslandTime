@@ -27,6 +27,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
     private boolean up3;
     private boolean up4;
     private boolean played;
+    private Rectangle exit;
 
     private JFrame enclosingFrame;
 
@@ -44,10 +45,11 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
     private boolean[] pressedKeys;
 
     public BasementPanel (JFrame frame) {
+        exit = new Rectangle(290, 55, 200,210);
         played = false;
         leverCount = 0;
         enclosingFrame = frame;
-        player = GraphicsPanel.getPlayer(); //change later pls
+        player = new Player("fhjfijdnhfuishnf", "may", 17); //change later pls
         player.setX(361);
         player.setY(389);
         up1 = true;
@@ -287,6 +289,11 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             g.drawImage(door, 290, 55, null);
             g.drawImage(lady, 200, 200, null);
             played = true;
+            if (player.playerRect().intersects(exit)) {
+                sound.stop();
+                sound.close();
+                enclosingFrame.setVisible(false);
+            }
         }
 
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
@@ -294,27 +301,23 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
         // player moves left (a)
         if (pressedKeys[65]) {
             player.moveLeft();
-            System.out.println("left");
             g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves right (d)
         if (pressedKeys[68]) {
             player.moveRight();
-            System.out.println("right");
             g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
         }
 
         // player moves up (w)
         if (pressedKeys[87]) {
             player.moveUp();
-            System.out.println("up");
         }
 
         // player moves down (s)
         if (pressedKeys[83]) {
             player.moveDown();
-            System.out.println("down");
         }
     }
 

@@ -116,6 +116,7 @@ public class Day3PlazaPanel extends JPanel implements ActionListener {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
         try {
             crazyImg = ImageIO.read(new File("src/MichealCrazy.png"));
         } catch (IOException e) {
