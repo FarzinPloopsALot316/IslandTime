@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="bedroom frame and panel">
+      <change afterPath="$PROJECT_DIR$/src/michealRoar.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BedroomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BedroomFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BedroomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BedroomPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -64,8 +67,8 @@
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\fireplaylistongod" />
       <recent name="C:\Users\BT_1N3_07\IdeaProjects\IslandTime\src\imagos" />
     </key>
@@ -92,14 +95,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714064075256</updated>
-    </task>
-    <task id="LOCAL-00001" summary="it works somehow">
-      <option name="closed" value="true" />
-      <created>1714064332041</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1714064332041</updated>
     </task>
     <task id="LOCAL-00002" summary="giggles and dies">
       <option name="closed" value="true" />
@@ -472,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717766364630</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="bedroom frame and panel">
+      <option name="closed" value="true" />
+      <created>1717879532144</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1717879532144</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
