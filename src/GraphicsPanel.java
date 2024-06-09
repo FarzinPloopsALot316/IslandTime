@@ -19,6 +19,9 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private static Time time;
     private static Town town;
     private boolean accepted;
+    private static Villager riyun;
+    private static Villager needle;
+    private static String house;
 
     private JFrame enclosingFrame;
     private JButton button;
@@ -34,10 +37,13 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
     private Clip ambience;
 
     public GraphicsPanel (JFrame frame) {
+        house = "src/preppy.png";
         enclosingFrame = frame;
         introIdx = 0;
         name = "Player";
         Micheal = new MayorVillager("Micheal","hah haa", 24);
+        riyun = new Villager("Riyun", "hiissss..", 17);
+        needle = new Villager("Needle", "uwu", 17);
         try {
             background = ImageIO.read(new File("src/reception.png"));
         } catch (IOException e) {
@@ -217,6 +223,18 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
 
     }
 
+    public static Villager getRiyun () {
+        return riyun;
+    }
+
+    public static Villager getNeedle () {
+        return needle;
+    }
+
+    public static String getHouse () {
+        return house;
+    }
+
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton && e.getSource() == skip) {
             player = new Player("Player", "N/A", -1);
@@ -280,10 +298,17 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
                     repaint();
                 }
             } else {
-                ambience.stop();
-                ambience.close();
-                enclosingFrame.setVisible(false);
-                new Day1Frame();
+                if (WelcomePanel.isDemo()) {
+                    ambience.stop();
+                    ambience.close();
+                    enclosingFrame.setVisible(false);
+                    new Day2GrassFrame();
+                } else {
+                    ambience.stop();
+                    ambience.close();
+                    enclosingFrame.setVisible(false);
+                    new Day1Frame();
+                }
             }
         }
     }

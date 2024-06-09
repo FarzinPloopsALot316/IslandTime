@@ -128,4 +128,8 @@ public class WelcomePanel extends JPanel implements ActionListener {
         }
         repaint();
     }
+
+    public static boolean isDemo () {
+        return demo;
+    }
 }

@@ -61,11 +61,11 @@ public class Day2GrassPanel extends JPanel implements ActionListener, KeyListene
         this.RiyunIdx = 0;
         this.player = GraphicsPanel.getPlayer();
         this.mayor = GraphicsPanel.getMicheal();
-        this.riyun = Day2Panel.getRiyun();
-        this.needle = Day2Panel.getNeedle();
+        this.riyun = GraphicsPanel.getRiyun();
+        this.needle = GraphicsPanel.getNeedle();
         this.charWidth = player.getWidth();
         this.charHeight = player.getHeight();
-        this.playerHome = Day1Panel.getHouse();
+        this.playerHome = GraphicsPanel.getHouse();
 
         this.riyunSpeaks = new ArrayList<>();
         riyunSpeaks.add("Oh. Hey. What do you want, " + player.getName() + "? " + riyun.getCatchphrase());
