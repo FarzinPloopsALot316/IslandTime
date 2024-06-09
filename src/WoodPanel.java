@@ -124,19 +124,6 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
                 i--;
             }
         }
-
-        if (woodCount == 5) {
-            g.fillRect(0, 0, 900, 600);
-            sound.stop();
-            sound.close();
-            playSpooky();
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 400, 900, 200);
-            g.setColor(Color.WHITE);
-            g.drawString("Go back to sleep... I'm, not done with you, hah haa...", 100, 500);
-            button.setLocation(820, 450);
-        }
-
         //player moves left (a)
         if (pressedKeys[65]) {
             player.moveLeft();
@@ -157,6 +144,18 @@ public class WoodPanel extends JPanel implements ActionListener, KeyListener {
         // player moves down (s)
         if (pressedKeys[83]) {
             player.moveDown();
+        }
+
+        if (woodCount == 5) {
+            g.fillRect(0, 0, 900, 600);
+            sound.stop();
+            sound.close();
+            playSpooky();
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 400, 900, 200);
+            g.setColor(Color.WHITE);
+            g.drawString("Go back to sleep... I'm, not done with you, hah haa...", 100, 500);
+            button.setLocation(820, 450);
         }
     }
 

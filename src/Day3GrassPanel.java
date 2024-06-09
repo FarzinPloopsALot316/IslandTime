@@ -266,6 +266,27 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
         g.drawImage(Nancy, nancy.getX(), nancy.getY(), null);
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
 
+        if (pressedKeys[65]) {
+            player.moveLeft();
+            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
+        }
+
+        // player moves right (d)
+        if (pressedKeys[68]) {
+            player.moveRight();
+            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
+        }
+
+        // player moves up (w)
+        if (pressedKeys[87]) {
+            player.moveUp();
+        }
+
+        // player moves down (s)
+        if (pressedKeys[83]) {
+            player.moveDown();
+        }
+
         if (player.playerRect().intersects(riyun.VillagerRect()) && RiyunIdx < riyunSpeaks.size() - 1) { //riyun's conversation
             g.drawImage(background, 0,0, null);
             g.setColor(Color.BLACK);
@@ -306,27 +327,6 @@ public class Day3GrassPanel extends JPanel implements ActionListener, KeyListene
 
         if (riyunSpoke && needleSpoke && stellaNanSpoke && StellaNanIdx == StellaNanSpeaks.size() - 1) {
             plazaButton.setLocation(350, 500);
-        }
-
-        if (pressedKeys[65]) {
-            player.moveLeft();
-            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
-        }
-
-        // player moves right (d)
-        if (pressedKeys[68]) {
-            player.moveRight();
-            g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), player.getWidth(), player.getHeight(), null);
-        }
-
-        // player moves up (w)
-        if (pressedKeys[87]) {
-            player.moveUp();
-        }
-
-        // player moves down (s)
-        if (pressedKeys[83]) {
-            player.moveDown();
         }
 
     }

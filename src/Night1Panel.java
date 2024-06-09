@@ -96,6 +96,7 @@ public class Night1Panel extends JPanel implements ActionListener {
             g.drawImage(playerStand, 500,220, null);
             g.drawImage(mayorImg, 250,220, null);
         }
+        g.setColor(Color.BLACK);
         g.fillRect(0, 400, 900, 200);
         button.setLocation(820, 450);
         skip.setLocation(790, 50);

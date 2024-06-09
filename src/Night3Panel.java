@@ -38,8 +38,8 @@ public class Night3Panel extends JPanel implements ActionListener {
         strings.add("You try to drift into sleep after a long day.");
         strings.add("As you eyes begin to flutter, you hear the screams and cries of somebody ringing in the distance.");
         strings.add("Your head begins to ache from the screaming. You get up to see what's happening."); //2
-        strings.add("Hey, hiss...");
-        strings.add("You hearing that???");
+        strings.add("Uhm...");
+        strings.add("You hearing that??? hiss...");
         strings.add("No clue what's happening. We gotta go investigate.");
         strings.add("Everybody else can't sleep, hiss...");
         strings.add("We both gotta go check it out.");
