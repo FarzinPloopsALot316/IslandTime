@@ -469,6 +469,17 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 }
             }
         }
+
+        if (mayorIdx == 12) {
+            sound.stop();
+            sound.close();
+            roar.stop();
+            roar.close();
+            tinnitus.stop();
+            tinnitus.close();
+            enclosingFrame.setVisible(false);
+            new EndFrame();
+        }
         repaint();
     }
 }

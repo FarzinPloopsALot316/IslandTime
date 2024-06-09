@@ -15,6 +15,9 @@ import javax.sound.sampled.Clip;
 
 public class BasementPanel extends JPanel implements ActionListener, KeyListener {
     private ArrayList<Lever> levers;
+    private ArrayList<String> ladySpeaks;
+    private int idx;
+    private String dialogue;
     private int leverCount;
     private Player player;
     private boolean roomStart;
@@ -28,8 +31,11 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
     private boolean up4;
     private boolean played;
     private Rectangle exit;
+    private Rectangle Dellaine;
 
     private JFrame enclosingFrame;
+
+    private JButton button;
 
     private BufferedImage background;
     private BufferedImage playerStand;
@@ -46,6 +52,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
 
     public BasementPanel (JFrame frame) {
         exit = new Rectangle(290, 55, 200,210);
+        Dellaine = new Rectangle(200, 200, 175, 211);
         played = false;
         leverCount = 0;
         enclosingFrame = frame;
@@ -72,6 +79,26 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
         levers.add(lever2);
         levers.add(lever3);
         levers.add(lever4);
+
+        ladySpeaks = new ArrayList<>();
+        ladySpeaks.add("Hello my dear.");
+        ladySpeaks.add("I am no enemy. I promise you, " + player.getName() + ".");
+        ladySpeaks.add("My name is Dellaine. I have broken you out of your trance and untied your ropes.");
+        ladySpeaks.add("You have to get out of here. He is tricking you.");
+        ladySpeaks.add("I was kidnapped by Micheal years ago, where he forced me to be his best friend.");
+        ladySpeaks.add("Everytime I would beg for his mercy or refuse him, he would hurt me.");
+        ladySpeaks.add("He eventually killed me when he figured out I was trying to escape.");
+        ladySpeaks.add("He tore my body apart and ate my flesh like a hungry dog, dumping the rest of me off a cliff.");
+        ladySpeaks.add("Enough talking about me.");
+        ladySpeaks.add("Escape through his bedroom window.");
+        ladySpeaks.add("Hurry, he may be home soon.");
+        ladySpeaks.add("Should not print.");
+        idx = 0;
+        dialogue = ladySpeaks.get(idx);
+
+        button = new JButton("⟹");
+        add(button);
+        button.addActionListener(this);
 
         try {
             background = ImageIO.read(new File("src/basement1.png"));
@@ -154,6 +181,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
 
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
+        button.setLocation(-820,-450);
 
         if (roomStart) {
             if (player.getXCoord() + player.getWidth() >= 900) {//right
@@ -275,32 +303,6 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
             }
         }
 
-        if (leverCount < 4 && roomStart) {
-            g.drawImage(door, 290, 55, null);
-        } else if (leverCount == 4 && roomStart) {
-            try {
-                door = ImageIO.read(new File("src/open.png"));
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-            if (!played) {
-                playBoo();
-            }
-            g.drawImage(door, 290, 55, null);
-            g.drawImage(lady, 200, 200, null);
-            played = true;
-            if (player.playerRect().intersects(exit)) {
-                sound.stop();
-                sound.close();
-                enclosingFrame.setVisible(false);
-                if (WelcomePanel.isDemo()) {
-                    new DemoEndFrame();
-                } else {
-                    new BedroomFrame();
-                }
-            }
-        }
-
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
 
         // player moves left (a)
@@ -324,9 +326,51 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
         if (pressedKeys[83]) {
             player.moveDown();
         }
+
+        if (leverCount < 4 && roomStart) {
+            g.drawImage(door, 290, 55, null);
+        } else if (leverCount == 4 && roomStart) {
+            try {
+                door = ImageIO.read(new File("src/open.png"));
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+            if (!played) {
+                playBoo();
+            }
+            g.drawImage(door, 290, 55, null);
+            g.drawImage(lady, 200, 200, null);
+            played = true;
+            if (player.playerRect().intersects(exit)) {
+                sound.stop();
+                sound.close();
+                enclosingFrame.setVisible(false);
+                if (WelcomePanel.isDemo()) {
+                    new DemoEndFrame();
+                } else {
+                    new BedroomFrame();
+                }
+            } else if (player.playerRect().intersects(Dellaine) && idx < ladySpeaks.size() - 1) {
+                g.drawImage(background, 0, 0, null);
+                g.setColor(Color.BLACK);
+                button.setLocation(820,450);
+                g.drawImage(lady, 261, 220, null);
+                g.drawImage(playerStand, 461, 220, null);
+                g.fillRect(0,400,900,200);
+                g.setColor(Color.darkGray);
+                g.drawString(dialogue, 100, 500);
+            }
+        }
     }
 
-    public void actionPerformed(ActionEvent e) {}
+    public void actionPerformed(ActionEvent e) {
+        if (idx < ladySpeaks.size() - 1) {
+            requestFocusInWindow();
+            idx++;
+            dialogue = ladySpeaks.get(idx);
+        }
+        repaint();
+    }
 
     public void keyTyped(KeyEvent e) {}
 
