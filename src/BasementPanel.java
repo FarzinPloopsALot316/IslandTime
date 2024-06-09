@@ -49,7 +49,7 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
         played = false;
         leverCount = 0;
         enclosingFrame = frame;
-        player = new Player("fhjfijdnhfuishnf", "may", 17); //change later pls
+        player = GraphicsPanel.getPlayer();
         player.setX(361);
         player.setY(389);
         up1 = true;

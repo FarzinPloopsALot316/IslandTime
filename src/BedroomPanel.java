@@ -50,9 +50,11 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
     private BufferedImage background;
     private BufferedImage playerStand;
     private BufferedImage mayor;
+    private BufferedImage lastOne;
 
     private Clip sound;
     private Clip roar;
+    private Clip tinnitus;
 
     private JButton button;
     private JButton one; //i got lazy naming things
@@ -62,7 +64,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
 
     public BedroomPanel (JFrame frame) {
         enclosingFrame = frame;
-        player = new Player("PLACEHOLDER", "N/A", 17);
+        player = GraphicsPanel.getPlayer();
         player.setX(361);
         player.setY(389);
 
@@ -111,8 +113,8 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         letter2.add("And when I ask her out, I know she won't refuse."); //7
         letter2.add("I won't mess up. This Sound Moon won't make me insane this time!");
         letter2.add("She won't end up like the last one.");
-        letter2.add("That one's remains are buried. The mistakes have rotted away.");
-        letter2.add("This time I won't eat anybody.");
+        letter2.add("I threw that one's body off that damn cliff already. I won't have to do that again."); //10
+        letter2.add("This time I won't eat anybody. I know I can control my hunger.");
         letter2.add("Should not print.");
         idx2 = 0;
         dialogue2 = letter2.get(idx2);
@@ -154,6 +156,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         dialogue4 = letter4.get(idx4);
 
         mayorSpeaks = new ArrayList<>();
+        mayorSpeaks.add("Should not print.");
         mayorSpeaks.add("What are you doing here, " + player.getName() + "?");
         mayorSpeaks.add("My my, you're being awfully disobedient, hah haa.");
         mayorSpeaks.add("Sneaking through to my bedroom.");
@@ -165,7 +168,9 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         mayorSpeaks.add("But oh, don't worry. I won't lay a tooth on you, hah haa!");
         mayorSpeaks.add("Not on my dear best friend. No no, not at all!");
         mayorSpeaks.add("Come closer! Allow me to comfort you, " + player.getName() + ".");
-        mayorSpeaks.add("You can trust me, you know, hah haa.");
+        mayorSpeaks.add(""); //11 jumpscare
+        mayorSpeaks.add(""); //12 tinnitus
+        mayorSpeaks.add("Should not print.");
         mayorIdx = 0;
         mayorDialogue = mayorSpeaks.get(mayorIdx);
 
@@ -189,6 +194,12 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
 
         try {
             letter = ImageIO.read(new File("src/letter.png"));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        try {
+            lastOne = ImageIO.read(new File("src/lostPlayer.png"));
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -246,6 +257,18 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         }
     }
 
+    public void playRing () {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/tinnitus.wav").getAbsoluteFile());
+            tinnitus = AudioSystem.getClip();
+            tinnitus.open(audioInputStream);
+            tinnitus.loop(Clip.LOOP_CONTINUOUSLY);
+            tinnitus.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
         one.setLocation(-820,-450);
@@ -257,6 +280,10 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         g.fillRect(0,0,900,600);
         g.drawImage(background, 0,0, null);
         g.drawImage(player.getCurrentImage(), (int) player.getXCoord(), (int) player.getYCoord(), null);
+
+        if (idx2 == 10) {
+            g.drawImage(lastOne, 750, 220, null);
+        }
 
         if (!read1 || !read2 || !read3 || !read4) {
             if (pressedKeys[65]) {
@@ -331,17 +358,44 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 button.setLocation(820, 450);
                 g.drawString(mayorDialogue, 100, 500);
                 g.drawImage(playerStand, 725, 220, null);
-            } else {
+            } else if (mayorIdx == 12) {
                 g.setColor(Color.BLACK);
                 g.fillRect(0, 0, 900, 600);
                 g.fillRect(0, 400, 900, 200);
-                g.drawImage(playerStand, 400, 220, null);
-                g.drawImage(mayor, 300, 220, null);
+                try {
+                    mayor = ImageIO.read(new File("src/jumpscare.png"));
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                button.setLocation(820, 450);
+                g.drawImage(mayor, 145, 134, null);
+            } else {
+                roar.stop();
+                roar.close();
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 0, 900, 600);
+                button.setLocation(820, 450);
+                try {
+                    playerStand = ImageIO.read(new File("src/killed.png"));
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                try {
+                    mayor = ImageIO.read(new File("src/werewolf.png"));
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                g.drawImage(playerStand, 420, 194, null);
+                g.drawImage(mayor, 320, 194, null);
             }
         }
 
-        if (mayorIdx == 11) { //this glitch is intentional.
+        if (mayorIdx == 12) { //this glitch is intentional.
             playRoar();
+        }
+
+        if (mayorIdx == 13) { //this glitch is intentional.
+            playRing();
         }
     }
 
@@ -364,7 +418,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 requestFocusInWindow();
                 idx1++;
                 dialogue1 = letter1.get(idx1);
-                if (idx1 == 17) {
+                if (idx1 == 18) {
                     read1 = true;
                 }
             }
@@ -375,7 +429,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 requestFocusInWindow();
                 idx2++;
                 dialogue2 = letter2.get(idx2);
-                if (idx2 == 11) {
+                if (idx2 == 12) {
                     read2 = true;
                 }
             }
@@ -386,7 +440,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 requestFocusInWindow();
                 idx3++;
                 dialogue3 = letter3.get(idx3);
-                if (idx3 == 12) {
+                if (idx3 == 13) {
                     read3 = true;
                 }
             }
@@ -397,7 +451,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 requestFocusInWindow();
                 idx4++;
                 dialogue4 = letter4.get(idx4);
-                if (idx4 == 12) {
+                if (idx4 == 13) {
                     read4 = true;
                 }
             }
@@ -409,7 +463,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                     requestFocusInWindow();
                     mayorIdx++;
                     mayorDialogue = mayorSpeaks.get(mayorIdx);
-                    if (mayorIdx == 11) {
+                    if (mayorIdx == 12) {
                         michealSpoke = true;
                     }
                 }
