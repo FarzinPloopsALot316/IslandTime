@@ -50,6 +50,10 @@ public class Night3Panel extends JPanel implements ActionListener {
         strings.add(" ");
         strings.add("wake up."); //13
         strings.add("now's your chance.");
+        strings.add("the sound moon rises tonight.");
+        strings.add("the beast will unleash soon.");
+        strings.add("don't trust the mayor. don't end up like me.");
+        strings.add("please run while you can.");
         dialogue = strings.get(idx);
 
         try {

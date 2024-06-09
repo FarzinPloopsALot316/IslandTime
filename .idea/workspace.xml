@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="bedroom frame and panel done, welcome frame added, working on demo mode.">
+      <change afterPath="$PROJECT_DIR$/src/DemoEndFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DemoEndPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2GrassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2GrassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasementPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WelcomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WelcomePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Night3Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Night3Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,22 +96,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714064075256</updated>
-    </task>
-    <task id="LOCAL-00004" summary="giggles and dies">
-      <option name="closed" value="true" />
-      <created>1714316834429</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1714316834430</updated>
-    </task>
-    <task id="LOCAL-00005" summary="giggles and dies">
-      <option name="closed" value="true" />
-      <created>1714317002191</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1714317002191</updated>
     </task>
     <task id="LOCAL-00006" summary="giggles and dies">
       <option name="closed" value="true" />
@@ -473,7 +460,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717904303991</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="bedroom frame and panel done, welcome frame added, working on demo mode.">
+      <option name="closed" value="true" />
+      <created>1717905083977</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1717905083977</updated>
+    </task>
+    <task id="LOCAL-00054" summary="bedroom frame and panel done, welcome frame added, working on demo mode.">
+      <option name="closed" value="true" />
+      <created>1717905517926</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1717905517927</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -5,7 +5,7 @@ public class BasementFrame implements Runnable {
     private BasementPanel panel;
 
     public BasementFrame () {
-        JFrame frame = new JFrame("Day ???: Switch all the levers down.");
+        JFrame frame = new JFrame("Day ???: Unlock the basement door.");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(900, 600);
         frame.setLocationRelativeTo(null); // auto-centers frame in screen

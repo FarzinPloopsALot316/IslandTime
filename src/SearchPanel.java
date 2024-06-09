@@ -242,7 +242,11 @@ public class SearchPanel extends JPanel implements ActionListener {
             sound.stop();
             sound.close();
             enclosingFrame.setVisible(false);
-            new Day2MichealFrame();
+            if (WelcomePanel.isDemo()) {
+                new Night3Frame();
+            } else {
+                new Day2MichealFrame();
+            }
         }
     }
 

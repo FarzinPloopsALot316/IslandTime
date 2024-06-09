@@ -237,12 +237,16 @@ public class GraphicsPanel extends JPanel implements KeyListener, MouseListener,
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton && e.getSource() == skip) {
-            player = new Player("Player", "N/A", -1);
+            player = new Player(name, "N/A", -1);
             town = new Town("Player's Town");
             ambience.stop();
             ambience.close();
             enclosingFrame.setVisible(false);
-            new Day1Frame();
+            if (WelcomePanel.isDemo()) {
+                new Day2GrassFrame();
+            } else {
+                new Day1Frame();
+            }
         } else {
             if (introIdx < Micheal.getMichealIntroLength() - 1) {
                 if (e.getSource() instanceof JButton && introIdx == 7) {

@@ -293,7 +293,11 @@ public class BasementPanel extends JPanel implements ActionListener, KeyListener
                 sound.stop();
                 sound.close();
                 enclosingFrame.setVisible(false);
-                new BedroomFrame();
+                if (WelcomePanel.isDemo()) {
+                    new DemoEndFrame();
+                } else {
+                    new BedroomFrame();
+                }
             }
         }
 
