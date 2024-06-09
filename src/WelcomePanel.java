@@ -25,6 +25,7 @@ public class WelcomePanel extends JPanel implements ActionListener {
     private BufferedImage Stella;
     private BufferedImage Nancy;
     private BufferedImage background;
+    private BufferedImage title;
 
     private Clip sound;
 
@@ -73,6 +74,12 @@ public class WelcomePanel extends JPanel implements ActionListener {
             System.out.println(e.getMessage());
         }
 
+        try {
+            title = ImageIO.read(new File("src/title.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
         demoGame = new JButton("<   Demo Game   >");
         add(demoGame);
         demoGame.addActionListener(this);
@@ -100,6 +107,7 @@ public class WelcomePanel extends JPanel implements ActionListener {
         g.drawImage(background, 0,0, null);
         g.setColor(Color.pink);
         g.fillRect(325, 225, 225, 200);
+        g.drawImage(title, 225, 50, null);
         g.drawImage(crazyImg, 115,225, null);
         g.drawImage(playerStand, 605, 225, null);
         g.drawImage(Riyun, 70, 475,null);
