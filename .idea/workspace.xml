@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6743354d-46f2-4ffc-af16-b51c64433ca2" name="Changes" comment="game done. editing final touches.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BedroomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BedroomPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,14 +125,6 @@
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
       <updated>1715952474789</updated>
-    </task>
-    <task id="LOCAL-00015" summary="intro done">
-      <option name="closed" value="true" />
-      <created>1716148871980</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1716148871981</updated>
     </task>
     <task id="LOCAL-00016" summary="intro done">
       <option name="closed" value="true" />
@@ -471,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717981744203</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="game done. editing final touches.">
+      <option name="closed" value="true" />
+      <created>1717983608282</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1717983608282</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

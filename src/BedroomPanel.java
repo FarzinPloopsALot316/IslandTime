@@ -388,11 +388,11 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
             }
         }
 
-        if (mayorIdx == 12) { //this glitch is intentional.
+        if (mayorIdx == 12) {
             playRoar();
         }
 
-        if (mayorIdx == 13) { //this glitch is intentional.
+        if (mayorIdx == 13) {
             playRing();
         }
     }
@@ -471,8 +471,6 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         if (mayorIdx == 14) {
             roar.stop();
             roar.close();
-            tinnitus.stop();
-            tinnitus.close();
             enclosingFrame.setVisible(false);
             new EndFrame();
         }
