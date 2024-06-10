@@ -380,7 +380,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 }
                 try {
                     mayor = ImageIO.read(new File("src/werewolf.png"));
-                } catch (IOException e) {
+                } catch (IOException e) { //eat ass you fuckign terrible computer
                     System.out.println(e.getMessage());
                 }
                 g.drawImage(playerStand, 420, 194, null);
