@@ -45,6 +45,8 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
     private int idx3;
     private int idx4;
     private int mayorIdx;
+    private boolean roarPlayed;
+    private boolean ringPlayed;
 
     private BufferedImage letter;
     private BufferedImage background;
@@ -388,12 +390,14 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
             }
         }
 
-        if (mayorIdx == 12) {
+        if (mayorIdx == 12 && !roarPlayed) {
             playRoar();
+            roarPlayed = true;
         }
 
-        if (mayorIdx == 13) {
+        if (mayorIdx == 13 && !ringPlayed) {
             playRing();
+            ringPlayed = true;
         }
     }
 
@@ -471,6 +475,8 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         if (mayorIdx == 14) {
             roar.stop();
             roar.close();
+            tinnitus.stop();
+            tinnitus.close();
             enclosingFrame.setVisible(false);
             new EndFrame();
         }
