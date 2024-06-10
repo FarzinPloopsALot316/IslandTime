@@ -168,8 +168,8 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
         mayorSpeaks.add("But oh, don't worry. I won't lay a tooth on you, hah haa!");
         mayorSpeaks.add("Not on my dear best friend. No no, not at all!");
         mayorSpeaks.add("Come closer! Allow me to comfort you, " + player.getName() + ".");
-        mayorSpeaks.add(""); //11 jumpscare
-        mayorSpeaks.add(""); //12 tinnitus
+        mayorSpeaks.add(""); //12 jumpscare
+        mayorSpeaks.add(""); //13 tinnitus
         mayorSpeaks.add("Should not print.");
         mayorIdx = 0;
         mayorDialogue = mayorSpeaks.get(mayorIdx);
@@ -370,8 +370,6 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
                 button.setLocation(820, 450);
                 g.drawImage(mayor, 145, 134, null);
             } else {
-                roar.stop();
-                roar.close();
                 g.setColor(Color.BLACK);
                 g.fillRect(0, 0, 900, 600);
                 button.setLocation(820, 450);
@@ -470,9 +468,7 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
             }
         }
 
-        if (mayorIdx == 12) {
-            sound.stop();
-            sound.close();
+        if (mayorIdx == 14) {
             roar.stop();
             roar.close();
             tinnitus.stop();
