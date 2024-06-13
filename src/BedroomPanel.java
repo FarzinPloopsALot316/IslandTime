@@ -27,6 +27,8 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
     private boolean read3;
     private boolean read4;
     private boolean michealSpoke;
+    private boolean roarPlayed;
+    private boolean ringPlayed;
 
     private ArrayList<String> letter1;
     private ArrayList<String> letter2;
@@ -45,8 +47,6 @@ public class BedroomPanel extends JPanel implements ActionListener, KeyListener 
     private int idx3;
     private int idx4;
     private int mayorIdx;
-    private boolean roarPlayed;
-    private boolean ringPlayed;
 
     private BufferedImage letter;
     private BufferedImage background;
